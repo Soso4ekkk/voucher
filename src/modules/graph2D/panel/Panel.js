@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 import FuncInputs from '../funcInputs/FuncInputs';
 
@@ -14,7 +14,7 @@ function Panel(props) {
     }
 
     return (
-        <div key={funcsLength}>
+        <div>
             <div className="graph2D_panel">
                 <button 
                     className="close" 
@@ -28,7 +28,6 @@ function Panel(props) {
                     {funcs.map((func, index) => 
                         <FuncInputs 
                             index={index}
-                            key={index}
                             func={func} 
                             delFunction={(index) => delFunctionClick(index)}
                         ></FuncInputs>
