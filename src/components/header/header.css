@@ -4,6 +4,11 @@ body {
 }
 
 /****************************для мема****************************/
+.memes {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .img {
     height: 360px;
     top: 410px;
