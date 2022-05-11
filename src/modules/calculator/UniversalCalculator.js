@@ -16,6 +16,7 @@ class UniversalCalculator {
         if (typeof str === 'string' && str) {
             const members = [];
             const arrStr = str.replace(/\s+/g, '').replace(/-/g, ' -').split(/[+ ]/g);
+            //для учета минуса в начале полинома
             for (let i = 0; i < arrStr.length; i++) {
                 if (arrStr[i] === '') { arrStr.splice(i, 1); }
             }

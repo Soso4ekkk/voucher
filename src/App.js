@@ -10,7 +10,7 @@ import window from './modules/graph2D/functions/functions';
 
 import './App.css';
 
-//для анимации
+//постоянная перерисовка сцены
 window.requestAnimFrame = (() => {
     return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
