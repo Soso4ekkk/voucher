@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import FuncInputs from '../funcInputs/FuncInputs';
 
-function Panel(props) {
+function Panel2D(props) {
     const { funcs, addFunction, delFunction, close } = props;
         
     const [funcsLength, setFuncsLength] = useState(funcs.length); 
@@ -38,4 +38,4 @@ function Panel(props) {
     );
 }
 
-export default Panel;
+export default Panel2D;

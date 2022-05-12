@@ -1,21 +1,21 @@
 import { useState } from 'react';
 
-import cone from '../figures/cone';
-import cube from '../figures/cube';
-import sphera from '../figures/sphera';
-import cylinder from '../figures/cylinder';
-import tor from '../figures/tor';
-import ellipsoid from '../figures/ellipsoid';
-import ellipticalCylinder from '../figures/ellipticalCylinder';
-import ellipticalParaboloid from '../figures/ellipticalParaboloid';
-import hyperbolicCylinder from '../figures/hyperbolicCylinder';
-import hyperbolicParaboloid from '../figures/hyperbolicParaboloid';
-import oneSheetedHyperboloid from '../figures/oneSheetedHyperboloid';
-import twoSheetedHyperboloid from '../figures/twoSheetedHyperboloid';
-import parabolicCylinder from '../figures/parabolicCylinder';
-import surprise from '../figures/surprise';
+import cone from '../../../modules/graph3D/figures/cone';
+import cube from '../../../modules/graph3D/figures/cube';
+import sphera from '../../../modules/graph3D/figures/sphera';
+import cylinder from '../../../modules/graph3D/figures/cylinder';
+import tor from '../../../modules/graph3D/figures/tor';
+import ellipsoid from '../../../modules/graph3D/figures/ellipsoid';
+import ellipticalCylinder from '../../../modules/graph3D/figures/ellipticalCylinder';
+import ellipticalParaboloid from '../../../modules/graph3D/figures/ellipticalParaboloid';
+import hyperbolicCylinder from '../../../modules/graph3D/figures/hyperbolicCylinder';
+import hyperbolicParaboloid from '../../../modules/graph3D/figures/hyperbolicParaboloid';
+import oneSheetedHyperboloid from '../../../modules/graph3D/figures/oneSheetedHyperboloid';
+import twoSheetedHyperboloid from '../../../modules/graph3D/figures/twoSheetedHyperboloid';
+import parabolicCylinder from '../../../modules/graph3D/figures/parabolicCylinder';
+import surprise from '../../../modules/graph3D/figures/surprise';
 
-import Planets from "../figures/Planets";
+import Planets from "../../../modules/graph3D/figures/Planets";
 
 function Panel3D(props) {
     const { 
@@ -138,9 +138,12 @@ function Panel3D(props) {
                 });
                 location.t += location.dt;
             }
-            //расстояние между тройками фигур
-            if (location.t >= Math.PI * 2) {
+            //расстояние между фигурами в тройке
+            if (location.t === Math.PI * 2) {
                 location.t = 0;
+            }
+            //расстояние между тройками фигур
+            if (figures.length % 3 === 0) {
                 location.k += 80;
             }
         }
@@ -156,7 +159,11 @@ function Panel3D(props) {
         if (figures.length > 0) {
             figures.pop();
             setFiguresLength(figures.length);
+            //регулирование расположения следующих добавленных фигур
             locationFigure.t -= locationFigure.dt;
+            if (figures.length % 3 !== 0) {
+                locationFigure.k -= 80;
+            }
         }
     }
 

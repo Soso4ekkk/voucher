@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Panel from '../panel/Panel';
+import Panel2D from '../panel/Panel2D';
 
 import './ui.css';
 
@@ -16,12 +16,12 @@ function UI(props) {
     return (
         <div>
             {showPanel ? 
-                <Panel 
+                <Panel2D 
                     funcs={funcs} 
                     close={() => togglePanel()}
                     addFunction={() => addFunction()}
                     delFunction={(index) => delFunction(index)}
-                ></Panel> : ''}
+                ></Panel2D> : ''}
             <button 
                 className="draw" 
                 onClick={() => togglePanel()}
