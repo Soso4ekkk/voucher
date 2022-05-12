@@ -3,7 +3,7 @@ import Edge from '../entities/Edge';
 import Polygon from '../entities/Polygon';
 import Subject from '../entities/Subject';
 
-function twoSheetedHyperboloid(count = 20, a = 7, b = 6, c = 5) {
+function twoSheetedHyperboloid(count = 20, a = 1, b = 1, c = 1) {
     const points = [];
     const edges = [];
     const polygons = [];
