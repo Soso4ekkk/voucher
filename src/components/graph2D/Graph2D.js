@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Canvas from '../../modules/canvas/Canvas';
-import UI from '../../modules/graph2D/ui/UI';
+import UI from './ui/UI';
 
 import './graph2D.css';
 
