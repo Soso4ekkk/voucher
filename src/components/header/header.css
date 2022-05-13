@@ -1,6 +1,7 @@
 /***************фон***************/
 body {
     background-color: #ffe0fd;
+    cursor: url(../../images/auto.png), auto;
 }
 
 /****************************для мема****************************/
@@ -26,7 +27,7 @@ body {
     background-size: cover;
     overflow: hidden;
     background-image: url('/src/images/lolOne.png');
-    cursor: pointer;
+    cursor: url(../../images/pointer.png), auto;
 }
 
 .block_1:hover {

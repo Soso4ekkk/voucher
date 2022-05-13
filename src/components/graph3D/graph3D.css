@@ -6,6 +6,10 @@ canvas {
     margin-left: 385px;
 }
 
+label {
+    cursor: url(../../images/auto.png), auto;
+}
+
 .checkbox {
     left: 35px;
     top: 70px;
@@ -24,7 +28,7 @@ canvas {
     margin-bottom: -3px;
     margin-left: 5px;
     background: #ffffff;
-    cursor: pointer;
+    cursor: url(../../images/pointer.png), auto;
 }
 
 .check3D:checked {
@@ -48,7 +52,7 @@ canvas {
     border: 1px solid #ffd8fc;
     font-family: monospace;
     outline: 0;
-    cursor: pointer;
+    cursor: url(../../images/pointer.png), auto;
 }
 
 .figures:hover {
@@ -67,7 +71,7 @@ canvas {
     top: 295px;
     position: absolute;
     font-family: monospace;
-    cursor: pointer;
+    cursor: url(../../images/pointer.png), auto;
 }
 
 .delate:hover {
@@ -84,7 +88,7 @@ canvas {
     height: 11px;
     width: 325px;
     border: none;
-    cursor: pointer;
+    cursor: url(../../images/pointer.png), auto;
 }
 
 .powerlight::-webkit-slider-thumb {
@@ -106,7 +110,7 @@ canvas {
     position: absolute;
     background-color: #ffd8fd;
     border: 0px;
-    cursor: pointer;
+    cursor: url(../../images/pointer.png), auto;
 }
 
 .color::-webkit-color-swatch {
@@ -133,7 +137,7 @@ canvas {
     font-size: 20pt;
     font-family: monospace;
     color: #e2228c;
-    cursor: default;
+    cursor: default;cursor: url(../../images/auto.png), auto;
 }
 
 .keysA {   
@@ -224,7 +228,7 @@ canvas {
     left: 1160px;
     top: 80px;
     position: absolute;
-    cursor: default;
+    cursor: url(../../images/auto.png), auto;
 }
 
 .text {

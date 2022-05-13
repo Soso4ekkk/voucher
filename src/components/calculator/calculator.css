@@ -14,7 +14,7 @@ button {
     border: 0px;
     border-radius: 0px;
     font-family: monospace;
-    cursor: pointer;
+    cursor: url(../../images/pointer.png), auto;
 }
 
 button:hover {
@@ -29,15 +29,17 @@ button:hover {
     margin-bottom: 5px;
     outline: 0;
     border: 0px;
+    cursor: url(../../images/pointer.png), auto;
 }
 
 .numbers:hover {
-    background: #ffd8fd;;
+    background: #ffd8fd;
+    cursor: url(../../images/pointer.png), auto;
 }
 
 .numbers:focus {
-    background: #ffd8fd;;
-}
+    background: #ffd8fd;
+}  
 
 .result {
     width: 500px;
@@ -47,19 +49,17 @@ button:hover {
     margin-bottom: 5px;
     outline: 0;
     border: 0px;
-}
-
-.result:hover {
-    background: #ffd8fd;;
+    background-color: #eee;
+    cursor: url(../../images/auto.png), auto;
 }
 
 .h2 {
-    cursor: default;
+    cursor: url(../../images/auto.png), auto;
     font-size: 18pt;
 }
 
 .rules {
     font-size: 16pt;
     font-family: monospace;
-    cursor: default;
+    cursor: url(../../images/auto.png), auto;
 }
