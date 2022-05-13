@@ -83,7 +83,7 @@ function Graph3D() {
         }); 
 
         const animLoop = () => {
-            //calc fps
+            //вычисление FPS
             fps++;
             const timestamp = Date.now();
             if (timestamp - lastTimestamp >= 1000) {
@@ -91,7 +91,7 @@ function Graph3D() {
                 fps = 0;
                 lastTimestamp = timestamp;
             }
-            //print scene
+            //вывод всей сцены
             math.calcPlaneEquation(WIN.CAMERA, WIN.DISPLAY); //плоскость экрана
             math.calcWinVectors(); //векторы экрана
             goAnimation(animations); //солнечная система
@@ -249,7 +249,7 @@ function Graph3D() {
             });
         }
 
-        //print polygons
+        //вывод полигонов
         if (flags.drawPolygons) {
             const polygons = [];
             figures.forEach((figure, index) => {
@@ -289,7 +289,7 @@ function Graph3D() {
             });
         }
 
-        //print edges
+        //вывод ребер
         if (flags.drawEdges) {
             figures.forEach(figure => {
                 figure.edges.forEach(edge => {
@@ -300,7 +300,7 @@ function Graph3D() {
             });
         }
 
-        //print points
+        //вывод точек
         if (flags.drawPoints) {
             figures.forEach(figure => {
                 figure.points.forEach(point => {

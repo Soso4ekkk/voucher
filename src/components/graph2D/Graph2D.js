@@ -35,7 +35,7 @@ function Graph2D() {
         });
         
         const animLoop = () => {
-            //print scene
+            //вывод всей сцены
             runn();
             window.requestAnimFrame(animLoop);
         }
