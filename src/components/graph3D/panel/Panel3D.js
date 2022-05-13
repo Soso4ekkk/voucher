@@ -161,7 +161,7 @@ function Panel3D(props) {
             setFiguresLength(figures.length);
             //регулирование расположения следующих добавленных фигур
             locationFigure.t -= locationFigure.dt;
-            if (figures.length % 3 !== 0) {
+            if (figures.length % 3 !== 0 && figures.length + 1 >= 3) {
                 locationFigure.k -= 80;
             }
         }
