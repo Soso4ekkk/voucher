@@ -183,14 +183,14 @@ function Panel3D(props) {
                 <input  
                     className="check3D" 
                     type="checkbox" 
-                    onChange={e => points(e)} 
+                    onChange={points} 
                     defaultChecked={flags.drawPoints}
                 ></input><label>&nbsp;точки</label> 
                 <br></br>
                 <input 
                     className="check3D" 
                     type="checkbox" 
-                    onChange={e => edges(e)} 
+                    onChange={edges} 
                     defaultChecked={flags.drawEdges}
                 ></input>
                 <label>&nbsp;ребра</label>
@@ -198,7 +198,7 @@ function Panel3D(props) {
                 <input  
                     className="check3D" 
                     type="checkbox" 
-                    onChange={e => polygons(e)} 
+                    onChange={polygons} 
                     defaultChecked={flags.drawPolygons}
                 ></input>
                 <label>&nbsp;полигоны</label>
@@ -206,7 +206,7 @@ function Panel3D(props) {
                 <input 
                     className="check3D" 
                     type="checkbox" 
-                    onChange={e => anim(e)} 
+                    onChange={anim} 
                     defaultChecked={flags.animation}
                 ></input>
                 <label>&nbsp;анимация</label>
@@ -214,7 +214,7 @@ function Panel3D(props) {
                 <input
                     className="check3D" 
                     type="checkbox" 
-                    onChange={e => shadow(e)} 
+                    onChange={shadow} 
                     defaultChecked={flags.dark}
                 ></input>
                 <label>&nbsp;тени</label>
@@ -222,14 +222,14 @@ function Panel3D(props) {
                 <input
                     className="check3D" 
                     type="checkbox" 
-                    onChange={e => shine(e)} 
+                    onChange={shine} 
                     defaultChecked={flags.light}
                 ></input>
                 <label>&nbsp;свет</label>  
             </div> 
             <select 
                 className="figures" 
-                onChange={e => changeFigure(e)}
+                onChange={changeFigure}
             >
                 <option>фигуры</option>
                 <option>конус</option>
@@ -248,16 +248,16 @@ function Panel3D(props) {
                 <option>сюрприз :)</option>
                 <option>солнечная система</option>
             </select>
-            <button className="delate" onClick={() => delateFigure()}>удалить</button>
+            <button className="delate" onClick={delateFigure}>удалить</button>
             <input 
                 className="powerlight" 
                 type="range" 
                 min="25000" 
                 max="100000"
-                onChange={e => setPowerLight(e)}
+                onChange={setPowerLight}
                 defaultValue={LIGHT.lumen}
             ></input>
-            <input className="color" type="color" onChange={e => setColor(e)}></input>
+            <input className="color" type="color" onChange={setColor}></input>
         </div>
     );
 }
