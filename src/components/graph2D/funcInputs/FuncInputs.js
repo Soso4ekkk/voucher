@@ -45,13 +45,13 @@ function FuncInputs(props) {
             <input
                 className="graph2D-input"
                 placeholder="y&nbsp;=&nbsp;f(x)"
-                onKeyUp={(e) => setFunction(e)}
+                onKeyUp={setFunction}
                 defaultValue={func.value}
             ></input>
             <input
                 className="checkDerevative"
                 type="checkbox"
-                onChange={(e) => setDerevative(e)}
+                onChange={setDerevative}
                 defaultChecked={func.derivativeX}
             ></input>
             <button
@@ -61,13 +61,13 @@ function FuncInputs(props) {
             <input
                 className="graph2D-input"
                 placeholder="start"
-                onKeyUp={(e) => setStartIntegral(e)}
+                onKeyUp={setStartIntegral}
                 defaultValue={func.startIntegral}
             ></input>
             <input
                 className="graph2D-input"
                 placeholder="end"
-                onKeyUp={(e) => setEndIntegral(e)}
+                onKeyUp={setEndIntegral}
                 defaultValue={func.endIntegral}
             ></input>
             <input
@@ -81,13 +81,13 @@ function FuncInputs(props) {
                 type="range" 
                 min="0.5" 
                 max="8.5"
-                onChange={(e) => setWidth(e)}
+                onChange={setWidth}
                 defaultValue={func.width}
             ></input>
             <input
                 className="colors"
                 type="color"
-                onChange={(e) => setColor(e)}
+                onChange={setColor}
                 defaultValue={func.color}
             ></input>
         </div>

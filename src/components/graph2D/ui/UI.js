@@ -18,13 +18,13 @@ function UI(props) {
             {showPanel ? 
                 <Panel2D 
                     funcs={funcs} 
-                    close={() => togglePanel()}
-                    addFunction={() => addFunction()}
-                    delFunction={(index) => delFunction(index)}
+                    close={togglePanel}
+                    addFunction={addFunction}
+                    delFunction={delFunction}
                 ></Panel2D> : ''}
             <button 
                 className="draw" 
-                onClick={() => togglePanel()}
+                onClick={togglePanel}
             >нарисовать<br></br>график</button>
         </div>
     );

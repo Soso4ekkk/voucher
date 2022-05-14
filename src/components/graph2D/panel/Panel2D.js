@@ -13,20 +13,27 @@ function Panel2D(props) {
         setFuncsLength(funcs.length);
     }
 
+    // добавляет функцию
+    const addFunctionClick = () => {
+        addFunction();
+        setFuncsLength(funcs.length);
+    };
+
     return (
-        <div>
+        <div key={funcsLength}>
             <div className="graph2D_panel">
                 <button 
                     className="close" 
-                    onClick={() => close()}
+                    onClick={close}
                 ></button>
                 <div><button 
                     className="add"
-                    onClick={() => addFunction()}
+                    onClick={addFunctionClick}
                 >добавить</button></div>
                 <div>
                     {funcs.map((func, index) => 
                         <FuncInputs 
+                            key={index}
                             index={index}
                             func={func} 
                             delFunction={(index) => delFunctionClick(index)}
