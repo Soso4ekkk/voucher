@@ -70,7 +70,7 @@ function Calculator() {
                     обычные&nbsp;числа:&nbsp;1<br/>
                     комплексные&nbsp;числа:&nbsp;1&#177;i*2<br/>
                     вектора:&nbsp;(1&nbsp;2&nbsp;3)<br/>
-                    матрицы:&nbsp;1,&nbsp;2&nbsp;/n&nbsp;3,&nbsp;4<br/>
+                    матрицы:&nbsp;1,&nbsp;2/n3,&nbsp;4<br/>
                     полиномиалы:&nbsp;1*x^2&#177;2*x^3
                 </p>
             </div>
