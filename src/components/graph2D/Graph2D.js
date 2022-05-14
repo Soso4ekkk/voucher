@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import Canvas from '../../modules/canvas/Canvas';
 import UI from './ui/UI';
@@ -6,6 +6,7 @@ import UI from './ui/UI';
 import './graph2D.css';
 
 function Graph2D() {
+
     let canvas; 
 
     const WIN = {
@@ -23,8 +24,6 @@ function Graph2D() {
 
     //производная по OX
     let derivativeX = 0;
-
-    const [funcsLength, setFuncsLength] = useState(funcs.length);
 
     useEffect(() => {
         canvas = new Canvas({
@@ -151,13 +150,15 @@ function Graph2D() {
         let x = LEFT;
         let dx = WIDTH / 1000;
         while (x < WIDTH + LEFT) {
-            if (f(x) - f(x + dx) < HEIGHT && f(x + dx) - f(x) < HEIGHT) {
-                canvas.line(x, f(x), x + dx, f(x + dx), color, width);
-                //рисует нули функции
-                if (getZero(f, x, x + dx, 0.001) != null) {
-                    canvas.point(getZero(f, x, x + dx, 0.001), 0, 2, 'red');
+            try {
+                if (f(x) - f(x + dx) < HEIGHT && f(x + dx) - f(x) < HEIGHT) {
+                    canvas.line(x, f(x), x + dx, f(x + dx), color, width);
+                    //рисует нули функции
+                    if (getZero(f, x, x + dx, 0.001) != null) {
+                        canvas.point(getZero(f, x, x + dx, 0.001), 0, 2, 'red');
+                    }
                 }
-            }
+            } catch (e) {}
             x += dx;
         }
     }
@@ -207,13 +208,11 @@ function Graph2D() {
             square: null,
             value: null
         });
-        setFuncsLength(funcs.length);
     }
 
     //удаляет функцию
     const delFunction = (index) => {
         funcs.splice(index, 1);
-        setFuncsLength(funcs.length);
     }
 
     const runn = () => {
@@ -260,9 +259,8 @@ function Graph2D() {
             ></canvas>
             <UI
                 funcs={funcs}
-                funcsLength={funcsLength}
-                addFunction={() => addFunction()}
-                delFunction={(index) => delFunction(index)}
+                addFunction={addFunction}
+                delFunction={delFunction}
             ></UI>
         </div>
     );
