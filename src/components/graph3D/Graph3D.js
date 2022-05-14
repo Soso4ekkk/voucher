@@ -333,7 +333,7 @@ function Graph3D() {
     return (
         <div 
             className="graph3D" 
-            onKeyDown={e => keyDownHandler(e)}
+            onKeyDown={keyDownHandler}
         >
             <canvas 
                 className="canvas" 
