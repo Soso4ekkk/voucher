@@ -26,22 +26,18 @@ class PolynomialCalculator {
                 members.push(new Member(elemB.value, elemB.power));
             }
         });
-        let length = members.length;
         for (let i = members.length - 1; i >= 0; i--) {
             if (members[i].value === 0) {
-                length--;
                 members.slice(0, i);
             }
         }
-        if (length === 0) { return 0; }
-        return new Polynomial(members);
+        return members.length ? new Polynomial(members) : 0;
     }
 
     sub(a, b) {
         const members = [];
         a.poly.forEach(elemA => {
             const member = b.poly.find(elemB => elemB.power === elemA.power);
-
             if (member) {
                 members.push(new Member(this.calc.sub(elemA.value, member.value), elemA.power));
             } else {
@@ -54,15 +50,12 @@ class PolynomialCalculator {
                 members.push(new Member(this.calc.prod(elemB.value, -1), elemB.power));
             }
         });
-        let length = members.length;
         for (let i = members.length - 1; i >= 0; i--) {
-            if (members[i].value === 0) {
-                length--;
+            if (!members[i].value) {
                 members.slice(0, i);
             }
         }
-        if (length === 0) { return 0; }
-        return new Polynomial(members);
+        return members.length ? new Polynomial(members) : 0;
     }
 
     mult(a, b) {

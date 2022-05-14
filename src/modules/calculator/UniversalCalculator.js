@@ -109,6 +109,9 @@ class UniversalCalculator {
 
     /**********************операции калькулятора**********************/
     get(elem) {
+        if (elem instanceof Polynomial) {
+            return new PolynomialCalculator();
+        }
         if (elem instanceof Matrix) {
             return new MatrixCalculator(this.get(elem.values[0][0]));
         }
@@ -117,9 +120,6 @@ class UniversalCalculator {
         }
         if (elem instanceof Complex) {
             return new ComplexCalculator();
-        }
-        if (elem instanceof Polynomial) {
-            return new PolynomialCalculator();
         }
         return new RealCalculator();
     }
