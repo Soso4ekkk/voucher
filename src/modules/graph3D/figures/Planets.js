@@ -5,10 +5,10 @@ import Point from '../entities/Point';
 
 class Planets {
 
-    /**************переменные для солнечной системы**************/
+    /************* переменные для солнечной системы *************/
     Sun = new solarSystem(
         20, 10, new Point(), "#ffff00", [{
-            //вращение вокруг своей оси
+            // вращение вокруг своей оси
             method: 'rotateOz',
             value: -(Math.PI / 180 / 3),
             text: "Солнце",
@@ -18,12 +18,12 @@ class Planets {
 
     Mercury = new solarSystem(
         20, 2, new Point(-20, 0, 0), "#faebd7", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOz',
             value: -Math.PI / 480,
             center: new Point(),
             text: "Меркурий"
-        }, { //вращение вокруг себя любимого
+        }, { // вращение вокруг себя любимого
             method: 'rotateOz',
             value: -Math.PI / 180,
             check: true
@@ -32,12 +32,12 @@ class Planets {
 
     Venus = new solarSystem(
         20, 3, new Point(-30, 0, 0), "#ffa07a", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOz',
             value: -Math.PI / 500,
             center: new Point(),
             text: "Венера"
-        }, { //вращение вокруг себя любимого
+        }, { // вращение вокруг себя любимого
             method: 'rotateOz',
             value: -Math.PI / 180,
             check: true
@@ -46,12 +46,12 @@ class Planets {
 
     Earth = new solarSystem(
         20, 5, new Point(-45, 0, 0), "#1e90ff", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOz',
             value: -Math.PI / 510,
             center: new Point(),
             text: "Земля"
-        }, { //вращение вокруг себя любимого
+        }, { // вращение вокруг себя любимого
             method: 'rotateOz',
             value: -Math.PI / 180,
             check: true
@@ -60,12 +60,12 @@ class Planets {
 
     Moon = new solarSystem(
         20, 1, new Point(-55, 0, 0), "#808080", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOz',
             value: -Math.PI / 510,
             center: this.Earth.center,
             text: "Луна"
-        }, { //вращение вокруг себя любимого
+        }, { // вращение вокруг себя любимого
             method: 'rotateOz',
             value: Math.PI / 360,
             check: true
@@ -74,12 +74,12 @@ class Planets {
 
     Mars = new solarSystem(
         20, 4, new Point(-65, 0, 0), "#cd853f", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOz',
             value: -Math.PI / 560,
             center: new Point(),
             text: "Марс"
-        }, { //вращение вокруг себя любимого
+        }, { // вращение вокруг себя любимого
             method: 'rotateOz',
             value: -Math.PI / 180 / 1.2,
             check: true
@@ -88,12 +88,12 @@ class Planets {
 
     Jupiter = new solarSystem(
         20, 10, new Point(-85, 0, 0), "#ffdab9", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOz',
             value: -Math.PI / 640,
             center: new Point(),
             text: "Юпитер"
-        }, { //вращение вокруг себя любимого
+        }, { // вращение вокруг себя любимого
             method: 'rotateOz',
             value: -Math.PI / 180 / 1.4,
             check: true
@@ -102,12 +102,12 @@ class Planets {
 
     Saturn = new solarSystem(
         20, 8, new Point(-115, 0, 0), "#eee8aa", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOz',
             value: -Math.PI / 720,
             center: new Point(),
             text: "Сатурн"
-        }, { //вращение вокруг себя любимогом
+        }, { // вращение вокруг себя любимогом
             method: 'rotateOz',
             value: -Math.PI / 180 / 1.7,
             check: true
@@ -116,11 +116,11 @@ class Planets {
 
     RingForSaturn = new ringForSaturn(
         20, 16, new Point(-115, 0, 0), "#a39f72", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOy',
             value: -Math.PI / 720,
             center: this.Saturn.center
-        }, { //вращение вокруг себя любимого
+        }, { // вращение вокруг себя любимого
             method: 'rotateOx',
             value: Math.PI / 360,
             center: this.Saturn.center,
@@ -130,12 +130,12 @@ class Planets {
 
     Uranium = new solarSystem(
         20, 5, new Point(-150, 0, 0), "#9acd32", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOz',
             value: -Math.PI / 770,
             center: new Point(),
             text: "Уран"
-        }, { //вращение вокруг себя любимого
+        }, { // вращение вокруг себя любимого
             method: 'rotateOz',
             value: -Math.PI / 180 / 2.2,
             check: true
@@ -144,12 +144,12 @@ class Planets {
 
     Neptune = new solarSystem(
         20, 5.3, new Point(-170, 0, 0), "#4169e1", [{
-            //вращение вокруг солнышка
+            // вращение вокруг солнышка
             method: 'rotateOz',
             value: -Math.PI / 900,
             center: new Point(),
             text: "Нептун"
-        }, { //вращение вокруг себя любимого
+        }, { // вращение вокруг себя любимого
             method: 'rotateOz',
             value: -Math.PI / 180 / 2.7,
             check: true
@@ -158,7 +158,7 @@ class Planets {
 
     /************************************************************/
 
-    //заполнение массива солнечной системы
+    // заполнение массива солнечной системы
     figures = [
         this.Sun,
         this.Mercury,
@@ -173,7 +173,7 @@ class Planets {
         this.Neptune
     ];
 
-    //массив связанных анимаций
+    // массив связанных анимаций
     animations = [{
         root: this.Sun,
         nodes: [

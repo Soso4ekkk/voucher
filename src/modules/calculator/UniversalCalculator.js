@@ -2,7 +2,7 @@ import { Complex, Vector, Matrix, Polynomial, Member } from './types';
 import { RealCalculator, ComplexCalculator, VectorCalculator, MatrixCalculator, PolynomialCalculator } from './calculators';
 
 class UniversalCalculator {
-    /***********************переводы из строки в соответствующий тип***********************/
+    /********************** переводы из строки в соответствующий тип **********************/
     toValue(str) {
         if (str.includes('*x^')) { return this.toPolynomial(str); }
         if (str.includes('\n')) { return this.toMatrix(str); }
@@ -16,9 +16,11 @@ class UniversalCalculator {
         if (typeof str === 'string' && str) {
             const members = [];
             const arrStr = str.replace(/\s+/g, '').replace(/-/g, ' -').split(/[+ ]/g);
-            //для учета минуса в начале полинома
+            // для учета минуса в начале полинома
             for (let i = 0; i < arrStr.length; i++) {
-                if (arrStr[i] === '') { arrStr.splice(i, 1); }
+                if (arrStr[i] === '') { 
+                    arrStr.splice(i, 1); 
+                }
             }
             for (let i = 0; i < arrStr.length; i++) {
                 members.push(this.toMember(arrStr[i]));
@@ -84,7 +86,7 @@ class UniversalCalculator {
 
     /**************************************************************************************/
 
-    /******методы для получения типов******/
+    /***** методы для получения типов *****/
     polynomial(members) {
         return new Polynomial(members);
     }
@@ -107,7 +109,7 @@ class UniversalCalculator {
 
     /**************************************/
 
-    /**********************операции калькулятора**********************/
+    /********************* операции калькулятора *********************/
     get(elem) {
         if (elem instanceof Polynomial) {
             return new PolynomialCalculator();

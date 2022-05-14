@@ -8,7 +8,7 @@ function hyperbolicParaboloid(count = 20, a = 3, b = 2) {
     const edges = [];
     const polygons = [];
 
-    //точки
+    // точки
     for (let x = -10; x < 10; x++) {
         for (let y = -10; y < 10; y++) {
             points.push(new Point(
@@ -19,19 +19,19 @@ function hyperbolicParaboloid(count = 20, a = 3, b = 2) {
         }
     }
 
-    //ребра
+    // ребра
     for (let i = 0; i < points.length; i++) {
-        //вдоль
+        // вдоль
         if (i + 1 < points.length && (i + 1) % count !== 0) 
             edges.push(new Edge(i, i + 1));
         else if ((i + 1) % count === 0) 
             edges.push(new Edge(i, i + 1 - count));
-        //поперек
+        // поперек
         if (i < points.length - count) 
             edges.push(new Edge(i, i + count));
     }
 
-    //полигоны
+    // полигоны
     for (let i = 0; i < points.length; i++) {
         if (i % 2 === 0) {
             if (i + 1 + count < points.length && (i + 1) % count !== 0) {

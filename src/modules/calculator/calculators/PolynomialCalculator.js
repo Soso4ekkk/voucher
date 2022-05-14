@@ -44,7 +44,6 @@ class PolynomialCalculator {
                 members.push(new Member(elemA.value, elemA.power));
             }
         });
-
         b.poly.forEach(elemB => {
             if (!members.find(el => el.power === elemB.power)) {
                 members.push(new Member(this.calc.prod(elemB.value, -1), elemB.power));

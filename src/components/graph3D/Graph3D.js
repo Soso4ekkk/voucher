@@ -22,15 +22,15 @@ function Graph3D() {
             HEIGHT: 20,
             CAMERA: new Point(0, 0, -50),
             DISPLAY: new Point(0, 0, -30),
-            P1: new Point(-10, 10, -30), //левый верхний угол
-            P2: new Point(-10, -10, -30), //левый нижний угол
-            P3: new Point(10, -10, -30) //правый нижний угол
+            P1: new Point(-10, 10, -30), // левый верхний угол
+            P2: new Point(-10, -10, -30), // левый нижний угол
+            P3: new Point(10, -10, -30) // правый нижний угол
     };
 
-    //флажок мышки
+    // флажок мышки
     let canMove = false;
 
-    //флажки чекбоксов
+    // флажки чекбоксов
     let flags = {
         drawPoints: false,
         drawEdges: false,
@@ -40,14 +40,14 @@ function Graph3D() {
         light: false
     };
 
-    //источник света
+    // источник света
     let LIGHT = new Light(-30, 30, 0, 37500);
 
-    //массивы фигур и связанных анимаций
+    // массивы фигур и связанных анимаций
     let figures = [];
     let animations = [];
 
-    //вывод нескольких фигур одновременно
+    // вывод нескольких фигур одновременно
     let locationFigure = {
         R: 22,
         dt: Math.PI * 2 / 3,
@@ -55,15 +55,15 @@ function Graph3D() {
         k: 0,
     };
 
-    //вращение фигур
+    // вращение фигур
     let dx = 0;
     let dy = 0;
 
-    //фон солнечной системы для анимации
+    // фон солнечной системы для анимации
     let space = new Image();
     space.src = img;
 
-    //переменные для FPS
+    // переменные для FPS
     let fps = 0;
     let FPS = 0;
     let lastTimestamp = Date.now();
@@ -83,7 +83,7 @@ function Graph3D() {
         }); 
 
         const animLoop = () => {
-            //вычисление FPS
+            // вычисление FPS
             fps++;
             const timestamp = Date.now();
             if (timestamp - lastTimestamp >= 1000) {
@@ -91,41 +91,41 @@ function Graph3D() {
                 fps = 0;
                 lastTimestamp = timestamp;
             }
-            //вывод всей сцены
-            math.calcPlaneEquation(WIN.CAMERA, WIN.DISPLAY); //плоскость экрана
-            math.calcWinVectors(); //векторы экрана
-            goAnimation(animations); //солнечная система
+            // вывод всей сцены
+            math.calcPlaneEquation(WIN.CAMERA, WIN.DISPLAY); // плоскость экрана
+            math.calcWinVectors(); // векторы экрана
+            goAnimation(animations); // солнечная система
             run();
             window.requestAnimFrame(animLoop);
         }
         animLoop();
     });
 
-    //перенос фигур и света
+    // перенос фигур и света
     const keyDownHandler = (e) => {
         switch (e.keyCode) {
-            case 65: //a - сцена влево
+            case 65: // a - сцена влево
                 return transformScene(math.move(1, 0, 0));
-            case 68: //d - сцена вправо
+            case 68: // d - сцена вправо
                 return transformScene(math.move(-1, 0, 0));
-            case 87: //w - сцена вверх
+            case 87: // w - сцена вверх
                 return transformScene(math.move(0, -1, 0));
-            case 83: //s - сцена вниз
+            case 83: // s - сцена вниз
                 return transformScene(math.move(0, 1, 0));
-            case 37: //стрелка влево - свет влево
+            case 37: // стрелка влево - свет влево
                 return moveLight(-1, 0, 0);
-            case 39: //стрелка вправо - свет вправо
+            case 39: // стрелка вправо - свет вправо
                 return moveLight(1, 0, 0);
-            case 38: //стрелка вверх - свет вверх
+            case 38: // стрелка вверх - свет вверх
                 return moveLight(0, 1, 0);
-            case 40: //стрелка вниз - свет вниз
+            case 40: // стрелка вниз - свет вниз
                 return moveLight(0, -1, 0);
             default:
                 break;
         }
     }
 
-    //вынос общего из метода переноса света
+    // вынос общего из метода переноса света
     const moveLight = (dx, dy, dz) => {
         if (flags.light) {
             LIGHT.x += dx;
@@ -134,9 +134,8 @@ function Graph3D() {
         }
     }
 
-    //зум
+    // зум
     const wheel = (e) => {
-        //e.preventDefault();
         const delta = (e.deltaY > 0) ? 0.3 : -0.3;
         transformScene(math.move(
             WIN.CAMERA.x * delta,
@@ -145,7 +144,7 @@ function Graph3D() {
         ));
     }
 
-    /*************************************вращения*************************************/
+    /************************************ вращения ************************************/
     const mouseMove = (e) => {
         const gradus = Math.PI / 180 / 4; 
         const matrix1 = math.rotateOy((dx - e.clientX) * gradus);
@@ -171,7 +170,7 @@ function Graph3D() {
 
     /**********************************************************************************/
 
-    //изменение сцены
+    // изменение сцены
     const transformScene = (matrix) => {
         math.transform(matrix, WIN.CAMERA);
         math.transform(matrix, WIN.DISPLAY);
@@ -180,7 +179,7 @@ function Graph3D() {
         math.transform(matrix, WIN.P3);
     }
 
-    /*************************анимация солнечной системы*************************/
+    /************************ анимация солнечной системы ************************/
     const figureAnimate = (figure, parentMatrix = math.one()) => {
         const matrix = figure.animations.reduce(
             (S, animation) => {
@@ -227,10 +226,10 @@ function Graph3D() {
     /****************************************************************************/
 
     const run = () => {
-        //очистка экрана
+        // очистка экрана
         canvas.clear();
 
-        //вывод фона и текста для анимации солнечной системы
+        // вывод фона и текста для анимации солнечной системы
         if (flags.animation && animations.length !== 0) {
             canvas.drawImg(space, 0, 0, 600, 600);
             figures.forEach(figure => {
@@ -249,7 +248,7 @@ function Graph3D() {
             });
         }
 
-        //вывод полигонов
+        // вывод полигонов
         if (flags.drawPolygons) {
             const polygons = [];
             figures.forEach((figure, index) => {
@@ -289,7 +288,7 @@ function Graph3D() {
             });
         }
 
-        //вывод ребер
+        // вывод ребер
         if (flags.drawEdges) {
             figures.forEach(figure => {
                 figure.edges.forEach(edge => {
@@ -300,7 +299,7 @@ function Graph3D() {
             });
         }
 
-        //вывод точек
+        // вывод точек
         if (flags.drawPoints) {
             figures.forEach(figure => {
                 figure.points.forEach(point => {
@@ -312,7 +311,7 @@ function Graph3D() {
             });
         }
 
-        //вывод источника света
+        // вывод источника света
         canvas.arc3D(
             math.getProection(LIGHT).x,
             math.getProection(LIGHT).y,
@@ -326,7 +325,7 @@ function Graph3D() {
             '#ffff63'
         );
 
-        //вывод FPS
+        // вывод FPS
         canvas.text(`FPS: ${FPS}`, -9.6, 9, '#e2228c');
     }
 

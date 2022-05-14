@@ -10,7 +10,7 @@ import window from './modules/graph2D/functions/functions';
 
 import './App.css';
 
-//постоянная перерисовка сцены
+// постоянная перерисовка сцены
 window.requestAnimFrame = (() => {
     return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
@@ -23,7 +23,7 @@ window.requestAnimFrame = (() => {
 })();
 
 function App() {
-    //точка старта
+    // точка старта
     const [activeButton, setActiveButton] = useState('graph3D');
 
     return (
@@ -33,12 +33,12 @@ function App() {
                 activeButton={activeButton}
                 setActiveButton={setActiveButton}
             ></Header>
-            {/*переключалки между компонентами*/}
+            {/* переключалки между компонентами */}
             {activeButton === 'calculator' ? <Calculator></Calculator> :
             activeButton === 'graph2D' ? <Graph2D></Graph2D> :
             activeButton === 'graph3D' ? <Graph3D></Graph3D> :
             ''}
-            {/*********************************/}
+            {/***********************************/}
         </div>
     );
 }

@@ -1,16 +1,16 @@
 class Canvas3D {
     constructor({WIN}) {
         this.WIN = WIN;
-        //уравнение плоскости в удобном виде
+        // уравнение плоскости в удобном виде
         this.plane = {
             A: 0,
             B: 0,
             C: 0,
-            //точки смещения
+            // точки смещения
             x0: 0,
             y0: 0,
             z0: 0,
-            //точки камеры
+            // точки камеры
             xs0: 0,
             ys0: 0,
             zs0: 0,
@@ -27,7 +27,7 @@ class Canvas3D {
             (this.WIN.CAMERA.z - point.z);
     }
 
-    //зум
+    // зум
     zoom(delta) {
         return [
             [delta, 0, 0, 0],
@@ -37,7 +37,7 @@ class Canvas3D {
         ];
     }
 
-    //перенос
+    // перенос
     move(dx, dy, dz) {
         return [
             [1, 0, 0, 0],
@@ -47,7 +47,7 @@ class Canvas3D {
         ];
     }
 
-    /****************************вращения****************************/
+    /*************************** вращения ***************************/
     rotateOx(alpha) {
         return [
             [1, 0, 0, 0],
@@ -77,7 +77,7 @@ class Canvas3D {
 
     /****************************************************************/
 
-    //преобразования матриц
+    // преобразования матриц
     transform(matrix, point) {
         const array = this.multMatrix(matrix, [point.x, point.y, point.z, 1]);
         point.x = array[0];
@@ -85,7 +85,7 @@ class Canvas3D {
         point.z = array[2];
     }
 
-    /**************перемножение матриц**************/
+    /************* перемножение матриц *************/
     multMatrix(T, m) {
         const a = [0, 0, 0, 0];
         for (let i = 0; i < T.length; i++) {
@@ -119,7 +119,7 @@ class Canvas3D {
 
     /***********************************************/
 
-    /***********************************полигоны***********************************/
+    /********************************** полигоны **********************************/
     calcDistance(figure, endPoint, name) {
         figure.polygons.forEach(polygon => {
             polygon[name] = Math.sqrt(
@@ -135,8 +135,8 @@ class Canvas3D {
 
     /******************************************************************************/
 
-    /******************************************тени******************************************/
-    //вычисляет центр полигона
+    /***************************************** тени *****************************************/
+    // вычисляет центр полигона
     calcCenters(figure) {
         figure.polygons.forEach(polygon => {
             const points = polygon.points;
@@ -154,17 +154,17 @@ class Canvas3D {
         });
     }
 
-    //вычисляет радиус полигона
+    // вычисляет радиус полигона
     calcRadius(figure) {
         const points = figure.points;
         figure.polygons.forEach(polygon => {
             const center = polygon.center;
-            //точки полигона1
+            // точки полигона1
             const p1 = points[polygon.points[0]];
             const p2 = points[polygon.points[1]];
             const p3 = points[polygon.points[2]];
             const p4 = points[polygon.points[3]];
-            //примерный радиус полигона1
+            // примерный радиус полигона1
             polygon.R = (
                 this.calcVectorModule(this.calcVector(center, p1)) +
                 this.calcVectorModule(this.calcVector(center, p2)) +
@@ -174,18 +174,18 @@ class Canvas3D {
         });
     }
 
-    //закрашивает полигоны в тени
+    // закрашивает полигоны в тени
     calcShadow(polygon, figures, LIGHT) {
-        //центр полигона1
+        // центр полигона1
         const M1 = polygon.center;
-        //радиус полигона1
+        // радиус полигона1
         const r = polygon.R;
-        //вектор от полигона1 до точки освещения
+        // вектор от полигона1 до точки освещения
         const s = this.calcVector(M1, LIGHT);
         for (let i = 0; i < figures.length; i++) {
             for (let j = 0; j < figures[i].polygons.length; j++) {
                 const polygon2 = figures[i].polygons[j];
-                //центр полигона2
+                // центр полигона2
                 const M0 = polygon2.center;
                 if (M1.x === M0.x &&
                     M1.y === M0.y &&
@@ -218,13 +218,13 @@ class Canvas3D {
 
     /****************************************************************************************/
 
-    //свет и тени
+    // свет и тени
     calcIllumination(distance, lumen) {
         const res = distance ? lumen / Math.pow(distance, 3) : 1;
         return res > 1 ? 1 : res;
     }
 
-    /*************анимация солнечной системы*************/
+    /************ анимация солнечной системы ************/
     animateMatrix(dx, dy, dz, method, value) {
         return [
             this.move(dx, dy, dz),
@@ -247,8 +247,8 @@ class Canvas3D {
 
     /****************************************************/
 
-    /*****************************отвязка камеры*****************************/
-    //уравнение плоскости и запись его в структуру
+    /**************************** отвязка камеры ****************************/
+    // уравнение плоскости и запись его в структуру
     calcPlaneEquation(point1, point2) {
         const vector = this.calcVector(point1, point2);
         this.plane.A = vector.x;
@@ -262,7 +262,7 @@ class Canvas3D {
         this.plane.zs0 = point1.z;
     }
 
-    //рассчет проекций точек на плоскость
+    // рассчет проекций точек на плоскость
     getProection(point) {
         const { A, B, C, x0, y0, z0, xs0, ys0, zs0 } = this.plane;
         const m = point.x - xs0;
@@ -296,8 +296,8 @@ class Canvas3D {
 
     /************************************************************************/
 
-    /************************************сраная математика************************************/
-    //вектор между 2 точками
+    /*********************************** сраная математика ***********************************/
+    // вектор между 2 точками
     calcVector(a, b) {
         return {
             x: b.x - a.x,
@@ -306,7 +306,7 @@ class Canvas3D {
         }
     }
 
-    //векторное произведение векторов
+    // векторное произведение векторов
     vectorProd(a, b) {
         return {
             x: a.y * b.z - a.z * b.y,
@@ -315,28 +315,28 @@ class Canvas3D {
         }
     }
 
-    //скалярное произведение векторов
+    // скалярное произведение векторов
     scalProd(a, b) {
         return a.x * b.x + a.y * b.y + a.z * b.z;
     }
 
-    //длина вектора
+    // длина вектора
     calcVectorModule(a) {
         return Math.sqrt(Math.pow(a.x, 2) + Math.pow(a.y, 2) + Math.pow(a.z, 2));
     }
 
-    //угол между 2 векторами
+    // угол между 2 векторами
     calcCorner(a, b) {
         return this.scalProd(a, b) /
             (Math.sqrt(this.scalProd(a, a)) * (Math.sqrt(this.scalProd(b, b))));
     }
 
-    //проверка на нулевой вектор
+    // проверка на нулевой вектор
     isVectorZero(vector) {
         return !vector.x && !vector.y && !vector.z;
     }
 
-    //умножение координат 2 векторов
+    // умножение координат 2 векторов
     vectorMult(a, b) {
         return {
             x: a.x * b.x * 5,
@@ -345,7 +345,7 @@ class Canvas3D {
         }
     }
 
-    //сложение координат 2 векторов
+    // сложение координат 2 векторов
     vectorSum(a, b) {
         return {
             x: a.x + b.x,

@@ -1,4 +1,4 @@
-//упрощалки для ввода функций в graph2D
+// упрощалки для ввода функций в graph2D
 window.sin = x => Math.sin(x);
 window.cos = x => Math.cos(x);
 window.tg = x => Math.tan(x);

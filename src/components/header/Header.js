@@ -7,7 +7,7 @@ function Header(props) {
 
     return (
         <div>
-            {/****************************мем****************************/}
+            {/*************************** мем ***************************/}
             <div className="memes">
                 <div>
                     <img className="img" src="/images/trusov.png" alt="trusov" />

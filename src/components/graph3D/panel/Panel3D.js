@@ -32,37 +32,37 @@ function Panel3D(props) {
 
     const [figuresLength, setFiguresLength] = useState(figures.length);  
 
-    //рисовать/не рисовать точки
+    // рисовать/не рисовать точки
     const points = (e) => {
         flags.drawPoints = e.target.checked;
     }
 
-    //рисовать/не рисовать ребра
+    // рисовать/не рисовать ребра
     const edges = (e) => {
         flags.drawEdges = e.target.checked;
     }
 
-    //рисовать/не рисовать полигоны
+    // рисовать/не рисовать полигоны
     const polygons = (e) => {
         flags.drawPolygons = e.target.checked;
     }
 
-    //включить/выключить анимацию
+    // включить/выключить анимацию
     const anim = (e) => {
         flags.animation = e.target.checked;
     }
 
-    //рисовать/не рисовать тени
+    // рисовать/не рисовать тени
     const shadow = (e) => {
         flags.dark = e.target.checked;
     }
 
-    //двигать/не двигать свет
+    // двигать/не двигать свет
     const shine = (e) => {
         flags.light = e.target.checked;
     }
 
-    //выбор фигуры
+    // выбор фигуры
     const changeFigure = (e) => {
         let f = 0;
         switch (e.target.value) {
@@ -122,44 +122,44 @@ function Panel3D(props) {
             default:
                 break;
         }
-        //вывод фигур по цилиндру
+        // вывод фигур по цилиндру
         if (f === 0) {
             const location = locationFigure;
-            //определение расположения фигуры в цилиндре
+            // определение расположения фигуры в цилиндре
             const matrix = move(
                 location.R * Math.cos(location.t),
                 location.R * Math.sin(location.t),
                 location.k
             );
-            //перемещение фигуры в свою позицию
+            // перемещение фигуры в свою позицию
             if (location.t < Math.PI * 2) {
                 figures[figures.length - 1].points.forEach(point => {
                     transform(matrix, point);
                 });
                 location.t += location.dt;
             }
-            //расстояние между фигурами в тройке
+            // расстояние между фигурами в тройке
             if (location.t === Math.PI * 2) {
                 location.t = 0;
             }
-            //расстояние между тройками фигур
+            // расстояние между тройками фигур
             if (figures.length % 3 === 0) {
                 location.k += 80;
             }
         }
     }
 
-    //сила освещения
+    // сила освещения
     const setPowerLight = (e) => {
         LIGHT.lumen = e.target.value;
     }
 
-    //удалить фигуру
+    // удалить фигуру
     const delateFigure = () => {
         if (figures.length > 0) {
             figures.pop();
             setFiguresLength(figures.length);
-            //регулирование расположения следующих добавленных фигур
+            // регулирование расположения следующих добавленных фигур
             locationFigure.t -= locationFigure.dt;
             if (figures.length % 3 !== 0 && figures.length + 1 >= 3) {
                 locationFigure.k -= 80;
@@ -167,7 +167,7 @@ function Panel3D(props) {
         }
     }
 
-    //изменить цвет фигур 
+    // изменить цвет фигур 
     const setColor = (e) => {
         const color = e.target.value;
         for (let i = 0; i < figures.length; i++) {

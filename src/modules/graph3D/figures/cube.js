@@ -5,7 +5,7 @@ import Subject from '../entities/Subject';
 
 function cube(x = 0, y = 0, z = 0, size = 10) {
 
-    //точки
+    // точки
     const points = [
         new Point(x - size, y - size, z - size),
         new Point(x - size, y - size, z + size),
@@ -17,7 +17,7 @@ function cube(x = 0, y = 0, z = 0, size = 10) {
         new Point(x + size, y + size, z - size)
     ];
 
-    //ребра
+    // ребра
     const edges = [
         new Edge(0, 1),
         new Edge(0, 3),
@@ -33,7 +33,7 @@ function cube(x = 0, y = 0, z = 0, size = 10) {
         new Edge(2, 6)
     ];
 
-    //полигоны
+    // полигоны
     const polygons = [
         new Polygon([0, 1, 2, 3]),
         new Polygon([0, 4, 7, 3]),

@@ -67,11 +67,11 @@ function Calculator() {
             <div>
                 <h2 className="h2">формат&nbsp;ввода:</h2>
                 <p className="rules">
-                    обычные&nbsp;числа:&nbsp;1<br />
-                    комплексные&nbsp;числа:&nbsp;1&#177;i*2<br></br>
-                    вектора&nbsp;(&nbsp;(1&nbsp;2&nbsp;3)&nbsp;)<br></br>
-                    матрицы&nbsp;(&nbsp;1,&nbsp;2&nbsp;/n&nbsp;3,&nbsp;4&nbsp;)<br></br>
-                    полиномиалы&nbsp;(&nbsp;1*x^2&#177;2*x^3&nbsp;)
+                    обычные&nbsp;числа:&nbsp;1<br/>
+                    комплексные&nbsp;числа:&nbsp;1&#177;i*2<br/>
+                    вектора:&nbsp;(1&nbsp;2&nbsp;3)<br/>
+                    матрицы:&nbsp;1,&nbsp;2&nbsp;/n&nbsp;3,&nbsp;4<br/>
+                    полиномиалы:&nbsp;1*x^2&#177;2*x^3
                 </p>
             </div>
         </div>

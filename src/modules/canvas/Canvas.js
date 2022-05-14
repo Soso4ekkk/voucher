@@ -32,7 +32,7 @@ class Canvas {
         this.context.beginPath();
         this.context.strokeStyle = color;
         this.context.lineWidth = width;
-        //пунктирная линия
+        // пунктирная линия
         if (isDash) {
             this.context.setLineDash([7, 5]);
         } else {
@@ -87,7 +87,7 @@ class Canvas {
         this.context.fill();
     }
 
-    /***************************************graph3D***************************************/
+    /************************************** graph3D **************************************/
     drawImg(img, x, y, width, height) {
         this.context.drawImage(img, x, y, width, height);
     }

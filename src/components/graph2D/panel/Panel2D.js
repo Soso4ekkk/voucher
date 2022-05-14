@@ -7,7 +7,7 @@ function Panel2D(props) {
         
     const [funcsLength, setFuncsLength] = useState(funcs.length); 
 
-    //удаляет функцию
+    // удаляет функцию
     const delFunctionClick = (index) => {
         delFunction(index);
         setFuncsLength(funcs.length);

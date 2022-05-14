@@ -8,7 +8,7 @@ function twoSheetedHyperboloid(count = 20, a = 1, b = 1, c = 1) {
     const edges = [];
     const polygons = [];
 
-    /**********************точки**********************/
+    /********************* точки *********************/
     const dt = Math.PI * 2 / count;
     for (let i = 0; i <= Math.PI; i += dt) {
         for (let j = 0; j < 2 * Math.PI; j += dt) {
@@ -31,16 +31,16 @@ function twoSheetedHyperboloid(count = 20, a = 1, b = 1, c = 1) {
     
     /*************************************************/
 
-    //ребра
+    // ребра
     for (let i = 0; i < points.length; i++) {
-        //вдоль
+        // вдоль
         if (i + 1 < points.length && (i + 1) % count !== 0)
             edges.push(new Edge(i, i + 1));
         else if (i + 1 >= count && (i + 1) % count === 0) 
             edges.push(new Edge(i, i + 1 - count));
     }
 
-    /*********************************полигоны*********************************/
+    /******************************** полигоны ********************************/
     for (let i = 0; i < points.length / 2 - count; i++) {
         if (i + 1 + count < points.length && (i + 1) % count !== 0) {
             polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count]));

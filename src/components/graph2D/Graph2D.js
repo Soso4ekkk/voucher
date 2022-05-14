@@ -16,13 +16,13 @@ function Graph2D() {
         HEIGHT: 20
     };
 
-    //массив функций
+    // массив функций
     let funcs = [];
 
-    //флажок мышки
+    // флажок мышки
     let canMove = false;
 
-    //производная по OX
+    // производная по OX
     let derivativeX = 0;
 
     useEffect(() => {
@@ -34,17 +34,17 @@ function Graph2D() {
         });
         
         const animLoop = () => {
-            //вывод всей сцены
+            // вывод всей сцены
             runn();
             window.requestAnimFrame(animLoop);
         }
         animLoop();
     });
 
-    //поле для графиков
+    // поле для графиков
     const printOXY = () => {
         const {LEFT, BOTTOM, HEIGHT, WIDTH} = WIN;
-        //разметка 
+        // разметка 
         for (let i = 0; i < LEFT + WIDTH; i += 1) {
             canvas.line(i, BOTTOM, i, BOTTOM + HEIGHT, '#ddd');
             canvas.line(i, -0.1, i, 0.1, 'black');
@@ -61,18 +61,18 @@ function Graph2D() {
             canvas.line(LEFT, i, LEFT + WIDTH, i, '#ddd');
             canvas.line(-0.1, i, 0.1, i, 'black');
         }
-        //ось 0X
+        // ось 0X
         canvas.line(LEFT, 0, LEFT + WIDTH, 0, 'black', 2);
-        //ось 0Y
+        // ось 0Y
         canvas.line(0, BOTTOM, 0, BOTTOM + HEIGHT, 'black', 2);
-        //стрелки
+        // стрелки
         canvas.line(LEFT + WIDTH, 0, LEFT + WIDTH - 0.7, 0.3, 'black', 1);
         canvas.line(LEFT + WIDTH, 0, LEFT + WIDTH - 0.7, -0.3, 'black', 1);
         canvas.line(0, BOTTOM + HEIGHT, 0.3, BOTTOM + HEIGHT - 0.7, 'black', 1);
         canvas.line(0, BOTTOM + HEIGHT, -0.3, BOTTOM + HEIGHT - 0.7, 'black', 1);
-        //точка
+        // точка
         canvas.point(0, 0, 3);
-        //текст
+        // текст
         canvas.text('0', 0.2, -0.8);
         canvas.text('1', 0.2, 0.8);
         canvas.text('-1', -0.9, -1.2);
@@ -80,7 +80,7 @@ function Graph2D() {
         canvas.text('y', 0.4, HEIGHT + BOTTOM - 0.5);
     }
 
-    /**********************движения мышкой**********************/
+    /********************* движения мышкой *********************/
     const mouseMove = (e) => {
         if (canMove) {
             WIN.LEFT -= canvas.sx(e.movementX);
@@ -99,7 +99,7 @@ function Graph2D() {
 
     /***********************************************************/
 
-    //зум
+    // зум
     const wheel = (e) => {
         const delta = (e.deltaY > 0) ? 0.3 : -0.3;
         if (WIN.WIDTH + delta > 0) {
@@ -110,7 +110,7 @@ function Graph2D() {
         }
     }
 
-    //находит нули функции
+    // находит нули функции
     const getZero = (f, a, b, eps) => {
         if (f(a) * f(b) > 0) {
             return null;
@@ -127,12 +127,12 @@ function Graph2D() {
         }
     }
 
-    //считает производную
+    // считает производную
     const getDerivative = (f, x0, dx = 0.0001) => {
         return (f(x0 + dx) - f(x0)) / dx;
     }
 
-    //считает площадь интеграла
+    // считает площадь интеграла
     const getIntegral = (f, a, b, func) => {
         const dx = (b - a) / 100;
         let x = a;
@@ -144,7 +144,7 @@ function Graph2D() {
         func.square =  s.toFixed(1);
     }
 
-    //рисует функцию
+    // рисует функцию
     const printFunction = (f, color, width) => {
         const { LEFT, WIDTH, HEIGHT } = WIN;
         let x = LEFT;
@@ -153,7 +153,7 @@ function Graph2D() {
             try {
                 if (f(x) - f(x + dx) < HEIGHT && f(x + dx) - f(x) < HEIGHT) {
                     canvas.line(x, f(x), x + dx, f(x + dx), color, width);
-                    //рисует нули функции
+                    // рисует нули функции
                     if (getZero(f, x, x + dx, 0.001) != null) {
                         canvas.point(getZero(f, x, x + dx, 0.001), 0, 2, 'red');
                     }
@@ -163,7 +163,7 @@ function Graph2D() {
         }
     }
 
-    //рисует площадь интеграла
+    // рисует площадь интеграла
     const printIntegral = (f, a, b) => {
         const dx = (b - a) / 100;
         let x = a;
@@ -177,12 +177,12 @@ function Graph2D() {
         canvas.polygon(points);
     }
 
-    //рисует производную
+    // рисует производную
     const printDerivative = (f, x0) => {
         const k = getDerivative(f, x0);
-        //пересечение касательной с функцией
+        // пересечение касательной с функцией
         canvas.point(x0, f(x0), 2, 'green');
-        //угол касательной к оси OX
+        // угол касательной к оси OX
         if (Math.atan(k) <= 0) {
             canvas.duga((k * x0 - f(x0)) / k, 0, 15, 0, Math.PI - Math.atan(k));
         } else {
@@ -196,7 +196,7 @@ function Graph2D() {
         canvas.line(x1, y1, x2, y2, 'blue', 1, true);
     }
 
-    //добавляет функцию
+    // добавляет функцию
     const addFunction = () => {
         funcs.push({
             f: () => null,
@@ -210,19 +210,19 @@ function Graph2D() {
         });
     }
 
-    //удаляет функцию
+    // удаляет функцию
     const delFunction = (index) => {
         funcs.splice(index, 1);
     }
 
     const runn = () => {
-        //очистка экрана
+        // очистка экрана
         canvas.clear();
 
-        //вывод разметки
+        // вывод разметки
         printOXY();
         
-        //вывод функций, производных, интегралов
+        // вывод функций, производных, интегралов
         for (var i = 0; i < funcs.length; i++) {
             const func = funcs[i];
             if (func) {

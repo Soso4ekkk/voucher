@@ -3,39 +3,37 @@ import './funcInputs.css';
 function FuncInputs(props) {
     const { func, index, delFunction } = props;
 
-    //добавить функцию
+    // добавить функцию
     const setFunction = (e) => {
         try {
             let f;
             eval(`f = function(x){return ${e.target.value};}`);
             func.f = f;
             func.value = e.target.value;
-        } catch (e) {
-            //console.log(e);
-        }
+        } catch (e) {}
     }
 
-    //изменить цвет
+    // изменить цвет
     const setColor = (e) => {
         func.color = e.target.value;
     }
 
-    //изменить ширину линии
+    // изменить ширину линии
     const setWidth = (e) => {
         func.width = e.target.value;
     }
 
-    //начало интеграла
+    // начало интеграла
     const setStartIntegral = (e) => {
         func.startIntegral = e.target.value - 0;
     }
 
-    //конец интеграла
+    // конец интеграла
     const setEndIntegral = (e) => {
         func.endIntegral = e.target.value - 0;
     }
 
-    //рисовать/не рисовать производную
+    // рисовать/не рисовать производную
     const setDerevative = (e) => {
         func.derivativeX = e.target.checked;
     }

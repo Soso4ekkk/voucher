@@ -8,7 +8,7 @@ function tor(R = 18, r = 6, count = 20) {
     const edges = [];
     const polygons = [];
 
-    //точки 
+    // точки 
     const dt = Math.PI * 2 / count;
     for (let i = 0; i < Math.PI * 2; i += dt) {
         for (let j = 0; j < Math.PI * 2; j += dt) {
@@ -20,19 +20,19 @@ function tor(R = 18, r = 6, count = 20) {
         }
     }
 
-    //ребра 
+    // ребра 
     for (let i = 0; i < points.length; i++) {
-        //вдоль
+        // вдоль
         if ((i + 1) % count === 0) 
             edges.push(new Edge(i, i + 1 - count));
         else edges.push(new Edge(i, i + 1));
-        //поперек
+        // поперек
         if (points[i + count]) 
             edges.push(new Edge(i, i + count));
         else edges.push(new Edge(i, count - (points.length - i)));
     }
 
-    //полигоны
+    // полигоны
     for (let i = 0; i < points.length; i++) {
         if (i + 1 + count < points.length && (i + 1) % count !== 0) {
             polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count]));
