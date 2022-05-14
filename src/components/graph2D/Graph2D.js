@@ -132,18 +132,6 @@ function Graph2D() {
         return (f(x0 + dx) - f(x0)) / dx;
     }
 
-    // считает площадь интеграла
-    const getIntegral = (f, a, b, func) => {
-        const dx = (b - a) / 100;
-        let x = a;
-        let s = 0;
-        while (x <= b) {
-            s += (f(x) + f(x + dx)) / 2 * dx;
-            x += dx
-        }
-        func.square =  s.toFixed(1);
-    }
-
     // рисует функцию
     const printFunction = (f, color, width) => {
         const { LEFT, WIDTH, HEIGHT } = WIN;
@@ -241,7 +229,6 @@ function Graph2D() {
                 const end = func.endIntegral;
                 if (!isNaN(start) && !isNaN(end) && start < end) {
                     printIntegral(func.f, start, end);
-                    getIntegral(func.f, start, end, func);
                 }
             }
         }

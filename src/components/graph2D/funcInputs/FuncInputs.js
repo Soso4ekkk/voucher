@@ -1,7 +1,11 @@
+import { useRef } from 'react';
+
 import './funcInputs.css';
 
 function FuncInputs(props) {
     const { func, index, delFunction } = props;
+
+    const square = useRef(null);
 
     // добавить функцию
     const setFunction = (e) => {
@@ -26,16 +30,39 @@ function FuncInputs(props) {
     // начало интеграла
     const setStartIntegral = (e) => {
         func.startIntegral = e.target.value - 0;
+        const start = func.startIntegral;
+        const end = func.endIntegral;
+        if (!isNaN(start) && !isNaN(end) && start < end) {
+            getIntegral(func.f, start, end, func);
+        }
     }
 
     // конец интеграла
     const setEndIntegral = (e) => {
         func.endIntegral = e.target.value - 0;
+        const start = func.startIntegral;
+        const end = func.endIntegral;
+        if (!isNaN(start) && !isNaN(end) && start < end) {
+            getIntegral(func.f, start, end, func);
+        }
     }
 
     // рисовать/не рисовать производную
     const setDerevative = (e) => {
         func.derivativeX = e.target.checked;
+    }
+
+    // считает площадь интеграла
+    const getIntegral = (f, a, b, func) => {
+        const dx = (b - a) / 100;
+        let x = a;
+        let s = 0;
+        while (x <= b) {
+            s += Math.abs((f(x) + f(x + dx)) / 2 * dx);
+            x += dx
+        }
+        square.current.value = s.toFixed(1);
+        func.square = s.toFixed(1);
     }
 
     return (
@@ -72,10 +99,11 @@ function FuncInputs(props) {
                 className="graph2D-input-square"
                 placeholder="square"
                 disabled={true}
+                ref={square}
                 defaultValue={func.square}
             ></input>
             <input
-                className="slider"
+                className="slider"Е
                 type="range" 
                 min="0.5" 
                 max="8.5"
