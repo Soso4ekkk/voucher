@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Header from './components/header/Header';
+import Meme from './components/Meme/Meme';
 
 import Calculator from './components/calculator/Calculator';
 import Graph2D from './components/graph2D/Graph2D';
@@ -33,12 +34,13 @@ function App() {
                 activeButton={activeButton}
                 setActiveButton={setActiveButton}
             ></Header>
-            {/* переключалки между компонентами */}
-            {activeButton === 'calculator' ? <Calculator></Calculator> :
+            <Meme></Meme>
+            {
+            activeButton === 'calculator' ? <Calculator></Calculator> :
             activeButton === 'graph2D' ? <Graph2D></Graph2D> :
             activeButton === 'graph3D' ? <Graph3D></Graph3D> :
-            ''}
-            {/***********************************/}
+            ''
+            }
         </div>
     );
 }
