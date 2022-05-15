@@ -74,7 +74,7 @@ label {
     cursor: url(../../images/pointer.png), auto;
 }
 
-.delate:hover {
+.delete:hover {
     background: #ffc8fc;
 }
 
