@@ -155,7 +155,7 @@ function Panel3D(props) {
     }
 
     // удалить фигуру
-    const delateFigure = () => {
+    const deleteFigure = () => {
         if (figures.length > 0) {
             figures.pop();
             setFiguresLength(figures.length);
@@ -248,7 +248,7 @@ function Panel3D(props) {
                 <option>сюрприз :)</option>
                 <option>солнечная система</option>
             </select>
-            <button className="delate" onClick={delateFigure}>удалить</button>
+            <button className="delete" onClick={deleteFigure}>удалить</button>
             <input 
                 className="powerlight" 
                 type="range" 
