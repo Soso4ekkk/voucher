@@ -236,6 +236,11 @@ function Graph2D() {
 
     return (
         <div className="graph2D">
+            <UI
+                funcs={funcs}
+                addFunction={addFunction}
+                delFunction={delFunction}
+            />
             <canvas 
                 className="canvas" 
                 id="canvas2D"
@@ -244,11 +249,6 @@ function Graph2D() {
                 onMouseUp={() => mouseUp()}
                 onMouseDown={() => mouseDown()}
             ></canvas>
-            <UI
-                funcs={funcs}
-                addFunction={addFunction}
-                delFunction={delFunction}
-            />
         </div>
     );
 }

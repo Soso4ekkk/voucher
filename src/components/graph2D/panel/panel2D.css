@@ -1,0 +1,64 @@
+.graph2D-panel {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.graph2D-panel-close {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+}
+
+.graph2D-panel-add {
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px 5px 10px 5px;
+}
+
+.graph2D-panel-functions {
+    display: flex;
+    justify-content: start;
+    margin: 5px;
+}
+
+.graph2D-panel-functions-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/***************** закрыть панель *****************/
+.close {
+    background: url(../../../images/close.png);
+    width: 25px;
+    height: 20px;
+    border: 0px;
+    cursor: url(../../../images/pointer.png), auto;
+}
+
+.close:hover {
+    background: url(../../../images/close.png);
+    transform: scale(1.1);
+}
+
+/**************************************************/
+
+/************** кнопка добавить график **************/
+.add {
+    background: #ffd8fd;
+    color: rgb(0, 0, 0);
+    font-size: 16pt;
+    width: 280px;
+    height: 40px;
+    border: 0px;
+    border-radius: 0px;
+    border: 0px solid #ffffff;
+    font-family: monospace;
+    cursor: url(../../../images/pointer.png), auto;
+}
+
+.add:hover {
+    background: #ffc8fc;
+}
+
+/****************************************************/

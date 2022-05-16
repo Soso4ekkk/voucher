@@ -1,91 +1,47 @@
-.graph2D-input {
+.functionSettings {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.functionSettings-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+/************* ввод *************/
+.inputFunction {
     width: 80px;
     height: 25px;
-    margin-left: 10px;
     border: 1px solid #ffffff;
     outline: 0;
 }
 
-.graph2D-input:hover {
+.inputFunction:hover {
     background: #ffd8fd;
 }
 
-.graph2D-input:focus {
+.inputFunction:focus {
     background: #ffd8fd;
 }
 
-.graph2D-input-square {
+/********************************/
+
+/*** вывод площади ***/
+.outputSquare {
     width: 80px;
     height: 25px;
-    margin-left: 10px;
     border: 0px;
     outline: 0;
 }
 
-.graph2D-button {
-    margin-left: 64px;
-    background: #ffd8fd;
-    color: rgb(0, 0, 0);
-    font-size: 11pt;
-    width: 90px;
-    height: 28px;
-    margin-top: 2px;
-    font-family: monospace;
-    cursor: url(../../../images/pointer.png), auto;
-}
-
-.colors {
-    border: 0px;
-    margin-left: 10px;
-    margin-top: 5px;
-    width: 46px;
-    height: 40px;
-    background-color: #ffd8fd;
-    cursor: url(../../../images/pointer.png), auto;
-}
-
-.colors::-webkit-color-swatch {
-    border: 0px;
-}
-
-.colors:hover {
-    transform: scale(1.05);
-}
-
-.slider {
-    margin-left: 10px;
-    -webkit-appearance: none;
-    border-radius: 7px;
-    width: 220px;
-    height: 8px;
-    margin-bottom: 15px;
-    background: #ffffff;
-    border: none;
-    margin-bottom: 30px;
-    cursor: url(../../../images/pointer.png), auto;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #ffffff;
-    border-radius: 50%;
-    background: #ffd8fd;
-    cursor: url(../../../images/pointer.png), auto;
-}
-
-.slider:hover {
-    transform: scale(1.05);
-}
-
+/************ рисовать/не рисовать производную  ************/
 .checkDerevative {
     -webkit-appearance: none;
     border: 1px solid #ffffff;
     width: 25px;
     height: 25px;
-    margin-bottom: -8px;
-    margin-left: 10px;
     background: #ffffff;
     cursor: url(../../../images/pointer.png), auto;
 }
@@ -99,3 +55,65 @@
     background: #ffc8fc;
     transform: scale(1.2);
 }
+
+/***********************************************************/
+
+/************* удалить функцию *************/
+.deleteFunction {
+    background: #ffd8fd;
+    color: rgb(0, 0, 0);
+    font-size: 11pt;
+    width: 90px;
+    height: 28px;
+    border: 0px;
+    font-family: monospace;
+    cursor: url(../../../images/pointer.png), auto;
+}
+
+/******************** изменить ширину ********************/
+.changeWidth {
+    margin-left: 10px;
+    -webkit-appearance: none;
+    border-radius: 7px;
+    width: 220px;
+    height: 8px;
+    background: #ffffff;
+    border: none;
+    margin-bottom: 30px;
+    cursor: url(../../../images/pointer.png), auto;
+}
+
+.changeWidth::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background: #ffd8fd;
+    cursor: url(../../../images/pointer.png), auto;
+}
+
+.changeWidth:hover {
+    transform: scale(1.05);
+}
+
+/*********************************************************/
+
+/******************** изменить цвет ********************/
+.changeColor {
+    border: 0px;
+    width: 46px;
+    height: 40px;
+    background-color: #ffd8fd;
+    cursor: url(../../../images/pointer.png), auto;
+}
+
+.changeColor::-webkit-color-swatch {
+    border: 0px;
+}
+
+.changeColor:hover {
+    transform: scale(1.05);
+}
+
+/*******************************************************/

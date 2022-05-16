@@ -66,56 +66,62 @@ function FuncInputs(props) {
     }
 
     return (
-        <div>
-            <input
-                className="graph2D-input"
-                placeholder="y&nbsp;=&nbsp;f(x)"
-                onKeyUp={setFunction}
-                defaultValue={func.value}
-            ></input>
-            <input
-                className="checkDerevative"
-                type="checkbox"
-                onChange={setDerevative}
-                defaultChecked={func.derivativeX}
-            ></input>
-            <button
-                className="graph2D-button"
-                onClick={() => delFunction(index)}
-            >удалить</button>
-            <input
-                className="graph2D-input"
-                placeholder="start"
-                onKeyUp={setStartIntegral}
-                defaultValue={func.startIntegral}
-            ></input>
-            <input
-                className="graph2D-input"
-                placeholder="end"
-                onKeyUp={setEndIntegral}
-                defaultValue={func.endIntegral}
-            ></input>
-            <input
-                className="graph2D-input-square"
-                placeholder="square"
-                disabled={true}
-                ref={square}
-                defaultValue={func.square}
-            ></input>
-            <input
-                className="slider"Е
-                type="range" 
-                min="0.5" 
-                max="8.5"
-                onChange={setWidth}
-                defaultValue={func.width}
-            ></input>
-            <input
-                className="colors"
-                type="color"
-                onChange={setColor}
-                defaultValue={func.color}
-            ></input>
+        <div className="functionSettings">
+            <div className="functionSettings-row">
+                <input
+                    className="inputFunction"
+                    placeholder="y&nbsp;=&nbsp;f(x)"
+                    onKeyUp={setFunction}
+                    defaultValue={func.value}
+                ></input>
+                <input
+                    className="checkDerevative"
+                    type="checkbox"
+                    onChange={setDerevative}
+                    defaultChecked={func.derivativeX}
+                ></input>
+                <button
+                    className="deleteFunction"
+                    onClick={() => delFunction(index)}
+                >удалить</button>
+            </div>
+            <div className="functionSettings-row">
+                <input
+                    className="inputFunction"
+                    placeholder="start"
+                    onKeyUp={setStartIntegral}
+                    defaultValue={func.startIntegral}
+                ></input>
+                <input
+                    className="inputFunction"
+                    placeholder="end"
+                    onKeyUp={setEndIntegral}
+                    defaultValue={func.endIntegral}
+                ></input>
+                <input
+                    className="outputSquare"
+                    placeholder="square"
+                    disabled={true}
+                    ref={square}
+                    defaultValue={func.square}
+                ></input>
+            </div>
+            <div className="functionSettings-row">
+                <input
+                    className="changeWidth"
+                    type="range" 
+                    min="0.5" 
+                    max="8.5"
+                    onChange={setWidth}
+                    defaultValue={func.width}
+                ></input>
+                <input
+                    className="changeColor"
+                    type="color"
+                    onChange={setColor}
+                    defaultValue={func.color}
+                ></input>
+            </div>
         </div>
     );
 }

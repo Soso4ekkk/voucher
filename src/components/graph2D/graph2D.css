@@ -1,6 +1,9 @@
 .graph2D {
-    text-align: left;
+    display: flex;
+    justify-content: start;
 }
 
 canvas {
+    display: flex;
+    padding: 0 10px 10px 10px;
 }

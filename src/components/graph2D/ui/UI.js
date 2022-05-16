@@ -14,18 +14,23 @@ function UI(props) {
     }
 
     return (
-        <div>
-            {showPanel ? 
-                <Panel2D 
-                    funcs={funcs} 
-                    close={togglePanel}
-                    addFunction={addFunction}
-                    delFunction={delFunction}
-                /> : ''}
-            <button 
-                className="draw" 
-                onClick={togglePanel}
-            >нарисовать<br></br>график</button>
+        <div className="panel2D">
+            <div className="panel2D-button">
+                <button 
+                    className="draw" 
+                    onClick={togglePanel}
+                >нарисовать<br/>график</button>
+            </div>
+            <div className="panel2D-window">
+                {showPanel ? 
+                    <Panel2D 
+                        funcs={funcs} 
+                        close={togglePanel}
+                        addFunction={addFunction}
+                        delFunction={delFunction}
+                    /> 
+                : ''}
+            </div>
         </div>
     );
 }
