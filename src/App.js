@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import ROUTES from './components/ROUTES/Routes';
 import Header from './components/header/Header';
+import Meme from './components/Meme/Meme';
 
 import Calculator from './components/calculator/Calculator';
 import Graph2D from './components/graph2D/Graph2D';
@@ -36,6 +37,7 @@ function App() {
                     <Route exact path = {ROUTES.GRAPH3D.path} element = {<Graph3D/>}/>
                 </Routes>
             </BrowserRouter>
+            <Meme></Meme>
         </div>
     );
 }
