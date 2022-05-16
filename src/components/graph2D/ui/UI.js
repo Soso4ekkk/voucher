@@ -21,7 +21,7 @@ function UI(props) {
                     close={togglePanel}
                     addFunction={addFunction}
                     delFunction={delFunction}
-                ></Panel2D> : ''}
+                /> : ''}
             <button 
                 className="draw" 
                 onClick={togglePanel}

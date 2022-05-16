@@ -248,7 +248,7 @@ function Graph2D() {
                 funcs={funcs}
                 addFunction={addFunction}
                 delFunction={delFunction}
-            ></UI>
+            />
         </div>
     );
 }

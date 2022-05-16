@@ -37,7 +37,7 @@ function Panel2D(props) {
                             index={index}
                             func={func} 
                             delFunction={(index) => delFunctionClick(index)}
-                        ></FuncInputs>
+                        />
                     )}
                 </div>
             </div>
