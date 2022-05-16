@@ -1,15 +1,19 @@
+import { useNavigate } from 'react-router-dom';
+
 import './button.css';
 
-function Button(props) {
-    const { title, name, isActive, onClick } = props;
+function Button({title, path, isActive, onClick}) {
+    const navigate = useNavigate();
 
-    // выбор стиля кнопок меню
-    const setActive = () => `field ${isActive === name ? 'active' : ''}`;
+    const onClickHandler = () => {
+        onClick(path);
+        navigate(path);
+    }
 
     return (
         <div
-            className={setActive()}
-            onClick={() => onClick(name)}
+            className={`field ${isActive === path ? 'active' : ''}`}
+            onClick={onClickHandler}
         >{title}</div>
     );
 }

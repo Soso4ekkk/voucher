@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import ROUTES from './components/ROUTES/Routes';
 import Header from './components/header/Header';
-import Meme from './components/Meme/Meme';
 
 import Calculator from './components/calculator/Calculator';
 import Graph2D from './components/graph2D/Graph2D';
@@ -24,23 +24,18 @@ window.requestAnimFrame = (() => {
 })();
 
 function App() {
-    // точка старта
-    const [activeButton, setActiveButton] = useState('graph3D');
 
     return (
         <div className="App">
-            <Header
-                key={activeButton}
-                activeButton={activeButton}
-                setActiveButton={setActiveButton}
-            ></Header>
-            <Meme></Meme>
-            {
-            activeButton === 'calculator' ? <Calculator></Calculator> :
-            activeButton === 'graph2D' ? <Graph2D></Graph2D> :
-            activeButton === 'graph3D' ? <Graph3D></Graph3D> :
-            ''
-            }
+            <BrowserRouter>
+                <Header ROUTES = {ROUTES}/>
+                <Routes>
+                    <Route exact path = {ROUTES.MAIN.path} element = {<Calculator/>}/>
+                    <Route exact path = {ROUTES.CALCULATOR.path} element = {<Calculator/>}/>
+                    <Route exact path = {ROUTES.GRAPH2D.path} element = {<Graph2D/>}/>
+                    <Route exact path = {ROUTES.GRAPH3D.path} element = {<Graph3D/>}/>
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }
