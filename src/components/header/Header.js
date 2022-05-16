@@ -13,7 +13,7 @@ function Header(props) {
 
     return (
         <div>
-            <div className="button">
+            <div className="main_page">
                 {Object.values(ROUTES).map(route =>
                     route.path !== '/' ?
                     <Button

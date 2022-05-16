@@ -1,21 +1,11 @@
-/*******************кнопки*******************/
-.button {
-    display: flex;
-    justify-content: flex-start;
-    font-family: monospace;
-    font-size: 17pt;
-}
-
 .field {
+    padding: 20px;
     background: #ffd8fd;
     color: #e2228c;
-    text-align: center;
-    width: 260px;
-    height: 40px;
+    width: 560px;
+    height: 0px;
     border: 0px;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     cursor: url(../../../images/pointer.png), auto;
 }
 
@@ -26,5 +16,3 @@
 .active {
     background-color: #ffc8fc;
 }
-
-/********************************************/

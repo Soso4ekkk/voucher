@@ -334,14 +334,6 @@ function Graph3D() {
             className="graph3D" 
             onKeyDown={keyDownHandler}
         >
-            <canvas 
-                className="canvas" 
-                id="canvas3D"
-                onWheel={e => wheel(e)}
-                onMouseMove={e => mouseMove(e)}
-                onMouseUp={() => mouseUp()}
-                onMouseDown={() => mouseDown()}
-            ></canvas>
             <Panel3D
                 flags={flags}
                 figures={figures}
@@ -350,20 +342,40 @@ function Graph3D() {
                 transform={(matrix, point) => math.transform(matrix, point)}
                 animations={animations}
                 LIGHT={LIGHT}
-            ></Panel3D>
+            />
+            <canvas 
+                className="canvas" 
+                id="canvas3D"
+                onWheel={e => wheel(e)}
+                onMouseMove={e => mouseMove(e)}
+                onMouseUp={() => mouseUp()}
+                onMouseDown={() => mouseDown()}
+            ></canvas>
             <div className="keysRules">
-                <p className="keysW">W</p>
-                <p className="keysA">A</p>
-                <p className="keysS">S</p>
-                <p className="keysD">D</p>
-                <p className="keys1">↑</p>
-                <p className="keys2">←</p>
-                <p className="keys3">↓</p>
-                <p className="keys4">→</p>
-            </div>
-            <div className="textRules">
-                <p className="text">-&nbsp;движение фигур</p>
-                <p className="text">-&nbsp;движение света</p>
+                <div>
+                    <div className="keysRules-wrapper">
+                        <div className="keysRules_button">
+                            <p>W</p>
+                            <div className="keysASD">
+                                <p>A</p>
+                                <p>S</p>
+                                <p>D</p>
+                            </div>
+                        </div>
+                        <p className="textRules">&nbsp;-&nbsp;движение фигур</p>
+                    </div>
+                    <div className="keysRules-wrapper">
+                        <div className="keysRules_button">
+                            <p>↑</p>
+                            <div className="keys234">
+                                <p>←</p>
+                                <p>↓</p>
+                                <p>→</p>
+                            </div>
+                        </div>
+                        <p className="textRules">&nbsp;-&nbsp;движение света</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
