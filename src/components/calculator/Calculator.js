@@ -28,51 +28,55 @@ function Calculator() {
 
     return (
         <div className="calculator">
-            <div>
-                <div>
+            <div className="textArea">
+                <div className="textArea-row">
                     <textarea 
-                        ref={elemA}
-                        className="numbers"
-                        placeholder="0"
-                    ></textarea>
+                    ref={elemA}
+                    className="numbers"
+                    placeholder="0"
+                    />
                     <textarea 
                         ref={elemB}
                         className="numbers"
                         placeholder="0"
-                    ></textarea>
+                    />
                 </div>
-                <div>
+                <div className="textArea-row">
                     <textarea
                         ref={elemC}
                         className="result"
                         placeholder="result"
                         disabled={true}
-                    ></textarea>
+                    />
                 </div>
             </div>
-            <div>
-                <button onClick={() => operation("add")}>&nbsp;Add&nbsp;</button>
-                <button onClick={() => operation("sub")}>&nbsp;Sub&nbsp;</button>
-                <button onClick={() => operation("mult")}>&nbsp;Mult&nbsp;</button>
+            <div className="button-operation">
+                <div className="button-row">
+                    <button onClick={() => operation("add")}>&nbsp;Add&nbsp;</button>
+                    <button onClick={() => operation("sub")}>&nbsp;Sub&nbsp;</button>
+                    <button onClick={() => operation("mult")}>&nbsp;Mult&nbsp;</button>
+                </div>
+                <div className="button-row">
+                    <button onClick={() => operation("div")}>&nbsp;Div&nbsp;</button>
+                    <button onClick={() => operation("prod")}>&nbsp;Prod&nbsp;</button>
+                    <button onClick={() => operation("pow")}>&nbsp;Pow&nbsp;</button>
+                </div>
+                <div className="button-row">
+                    <button onClick={() => operation("one")}>&nbsp;One&nbsp;</button>
+                    <button onClick={() => operation("zero")}>&nbsp;Zero&nbsp;</button>
+                </div>
             </div>
-            <div>
-                <button onClick={() => operation("div")}>&nbsp;Div&nbsp;</button>
-                <button onClick={() => operation("prod")}>&nbsp;Prod&nbsp;</button>
-                <button onClick={() => operation("pow")}>&nbsp;Pow&nbsp;</button>
-            </div>
-            <div>
-                <button onClick={() => operation("one")}>&nbsp;One&nbsp;</button>
-                <button onClick={() => operation("zero")}>&nbsp;Zero&nbsp;</button>
-            </div>
-            <div>
-                <h2 className="h2">формат&nbsp;ввода:</h2>
-                <p className="rules">
-                    обычные&nbsp;числа:&nbsp;1<br/>
-                    комплексные&nbsp;числа:&nbsp;1&#177;i*2<br/>
-                    вектора:&nbsp;(1&nbsp;2&nbsp;3)<br/>
-                    матрицы:&nbsp;1,&nbsp;2/n3,&nbsp;4<br/>
-                    полиномиалы:&nbsp;1*x^2&#177;2*x^3
-                </p>
+            <div className="inputRules">
+                <div className="headerRules">
+                    <p>формат&nbsp;ввода:</p>
+                </div>
+                <div className="pointsRules">
+                    <p>обычные&nbsp;числа:&nbsp;1</p>
+                    <p>комплексные&nbsp;числа:&nbsp;1&#177;i*2</p>
+                    <p>вектора:&nbsp;(1&nbsp;2&nbsp;3)</p>
+                    <p>матрицы:&nbsp;1,&nbsp;2/n3,&nbsp;4</p>
+                    <p>полиномиалы:&nbsp;1*x^2&#177;2*x^3</p>
+                </div>
             </div>
         </div>
     );

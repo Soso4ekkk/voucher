@@ -1,21 +1,20 @@
 .graph3D {
     display: flex;
-    flex-direction: row;
     justify-content: start;
-    padding-top: 70px;
 }
 
 canvas {
     display: flex;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
 }
 
 .panel3d {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
 }
 
+/********************** panel3D **********************/
 label {
     cursor: url(../../images/auto.png), auto;
 }
@@ -123,10 +122,13 @@ label {
     transform: scale(1.05);
 }
 
+/*****************************************************/
+
+/******************** правила ********************/
 .keysRules {
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     cursor: url(../../images/auto.png), auto;
 }
 
@@ -166,3 +168,5 @@ label {
     font-size: 13pt;
     cursor: url(../../images/auto.png), auto;
 }
+
+/*************************************************/

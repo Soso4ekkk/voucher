@@ -1,32 +1,26 @@
 .calculator {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-button {
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background: #ffd8fd;
-    color: rgb(0, 0, 0);
-    font-size: 16pt;
-    width: 200px;
-    height: 40px;
-    border: 0px;
-    border-radius: 0px;
-    font-family: monospace;
-    cursor: url(../../images/pointer.png), auto;
+/******************* ввод-вывод *******************/
+.textArea {
+    display: flex;
+    flex-direction: column;
 }
 
-button:hover {
-    background: #ffc8fc;
+.textArea-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px;
 }
 
 .numbers {
-    width: 240px;
-    height: 50px;
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    width: 340px;
+    height: 60px;
+    margin: 10px;
     outline: 0;
     border: 0px;
     cursor: url(../../images/pointer.png), auto;
@@ -42,24 +36,68 @@ button:hover {
 }  
 
 .result {
-    width: 500px;
+    width: 710px;
     height: 60px;
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 10px;
     outline: 0;
     border: 0px;
     background-color: #eee;
     cursor: url(../../images/auto.png), auto;
 }
 
-.h2 {
-    cursor: url(../../images/auto.png), auto;
-    font-size: 18pt;
+/**************************************************/
+
+/******************* кнопки операций *******************/
+.button-operation {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
 
-.rules {
+.button-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-operation button {
+    margin: 10px;
+    background: #ffd8fd;
+    color: rgb(0, 0, 0);
     font-size: 16pt;
+    width: 300px;
+    height: 40px;
+    border: 0px;
+    border-radius: 0px;
     font-family: monospace;
+    cursor: url(../../images/pointer.png), auto;
+}
+
+.button-operation button:hover {
+    background: #ffc8fc;
+}
+
+/*******************************************************/
+
+/******************* правила *******************/
+.inputRules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
     cursor: url(../../images/auto.png), auto;
 }
+
+.headerRules p {
+    font-size: 18pt;
+    font-family: monospace;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.pointsRules p {
+    font-size: 16pt;
+    font-family: monospace;
+    margin: 2px;
+}
+
+/***********************************************/
