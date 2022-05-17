@@ -1,20 +1,66 @@
-.memes {
+.meme {
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
+    height: 430px;
+}
+ /******* скрытая часть  *******/
+.hidden_part {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
 }
 
-.img {
-    height: 360px;
-    top: 410px;
-    left:  1050px;
-    position: fixed;
+/********** цитата **********/
+.quote {
+    display: flex;
+    justify-content: end;
+    width: 210px;
+    height: 85px;
+    background: #ffc8fc;
+    font-size: 13pt;
+    font-family: monospace;
 }
 
-.block_1 {
+/********* видимая часть *********/
+.visible_part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.visible_part-bulb {
+    display: flex;
+    justify-content: end;
+    padding-right: 90px;
+}
+
+/********* лампочка *********/
+.bulb {
+    width: 60px;
+    height: 70px;
+    right: 50px;
+    background-image: url('/src/images/bulbInactive.png');
+    cursor: url(../../images/pointer.png), auto;
+}
+
+.bulb:hover {
+    background-image: url('/src/images/bulbActive.png');
+}
+
+/***** картинка трусова *****/
+.main_picture {
+    height: 350px;
+}
+ 
+
+
+
+/*
+.visible_part {
     position: fixed;
+    bottom: 350px;
+    right: 112px;
     z-index: 1;
-    top: 332px;
-    left: 1208px;
     width: 60px;
     height: 70px;
     background-size: cover;
@@ -23,31 +69,33 @@
     cursor: url(../../images/pointer.png), auto;
 }
 
-.block_1:hover {
+.visible_part:hover {
     background-size: cover;
     background-image: url('/src/images/lolTwo.png');
 }
 
-.block_1:hover .block_2 {
+
+.visible_part:hover .hidden_part {
     visibility: visible;
 }
 
-.block_1:hover .block_3 {
+.visible_part:hover .quote {
     visibility: visible;
 }
 
-.block_2 {
+
+.hidden_part {
     position: fixed;
     visibility: hidden;
-    top: 390px;
-    left: 970px;
+    bottom: -130px;
+    right: 190px;
 }
 
-.block_3 {
+.quote {
     position: fixed;
     visibility: hidden;
-    top: 380px;
-    left: 995px;
+    bottom: 260px;
+    right: 180px;
     width: 210px;
     height: 85px;
     text-align: center;
@@ -56,7 +104,7 @@
     font-family: monospace;
 }
 
-.block_2 img {
+.hidden_part img {
     width: 250px;
     height: 500px;
-}
+}*/
