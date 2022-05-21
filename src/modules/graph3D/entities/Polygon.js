@@ -1,7 +1,7 @@
 import Point from './Point';
 
 class Polygon {
-    constructor(points = [], color = '#ffc8fc') {
+    constructor(points = [], color = '#e2228c') {
         this.points = points;
         this.color = this.hexToRgb(color);
         this.distance = 0;

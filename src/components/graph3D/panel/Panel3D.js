@@ -265,7 +265,7 @@ function Panel3D(props) {
                 onChange={setPowerLight}
                 defaultValue={LIGHT.lumen}
             ></input>
-            <input className="color" type="color" onChange={setColor}></input>
+            <input className="color" type="color" onChange={setColor} defaultValue="#e2228c"></input>
         </div>
     );
 }

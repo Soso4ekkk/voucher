@@ -87,18 +87,19 @@ label {
     -webkit-appearance: none;
     border: 1px solid #ffc8fc;
     border-radius: 7px;
-    height: 11px;
+    height: 78px;
     width: 325px;
     border: none;
+    background: url(/src//images/clouds.jpg);
     cursor: url(../../images/pointer.png), auto;
     margin-top: 40px;
 }
 
 .powerlight::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background: url(/src/images/slider.png);
-    height: 39px;
-    width: 39px;
+    background: url(/src/images/trusov-bird.png);
+    height: 70px;
+    width: 60px;
 }
 
 .powerlight:hover {
@@ -106,16 +107,20 @@ label {
 }
 
 .color {
-    height: 40px;
-    width: 60px;
+    height: 90px;
+    width: 90px;
     background-color: #ffd8fd;
     border: 0px;
+    border-radius: 7px;
+    background: url(/src/images/clouds.jpg);
     cursor: url(../../images/pointer.png), auto;
     margin-top: 30px;
 }
 
 .color::-webkit-color-swatch {
     border: 0px;
+    margin: 15px;  
+    border-radius: 3px;
 }
 
 .color:hover {
