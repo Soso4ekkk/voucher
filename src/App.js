@@ -28,7 +28,8 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Header ROUTES = {ROUTES}/>
+                <div className="header-row"><Header ROUTES = {ROUTES}/></div>
+                <div className="meme-row"><Meme></Meme></div>
                 <Routes>
                     <Route exact path = {ROUTES.MAIN.path} element = {<Calculator/>}/>
                     <Route exact path = {ROUTES.CALCULATOR.path} element = {<Calculator/>}/>
@@ -36,7 +37,6 @@ function App() {
                     <Route exact path = {ROUTES.GRAPH3D.path} element = {<Graph3D/>}/>
                 </Routes>
             </BrowserRouter>
-            <Meme></Meme>
         </div>
     );
 }
