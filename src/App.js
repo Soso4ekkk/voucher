@@ -29,7 +29,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <div className="header-row"><Header ROUTES = {ROUTES}/></div>
-                <div className="meme-row"><Meme></Meme></div>
+                <div className="meme-row"><Meme/></div>
                 <Routes>
                     <Route exact path = {ROUTES.MAIN.path} element = {<Calculator/>}/>
                     <Route exact path = {ROUTES.CALCULATOR.path} element = {<Calculator/>}/>

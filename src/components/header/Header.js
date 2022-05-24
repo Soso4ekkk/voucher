@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from './button/Button';
@@ -8,8 +8,12 @@ import './header.css';
 function Header(props) {
     const { ROUTES } = props;
     
-    const [ activeButton, setActiveButton ] = useState(ROUTES.CALCULATOR.path);
+    let [ activeButton, setActiveButton ] = useState(ROUTES.CALCULATOR.path);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setActiveButton(activeButton = window.location.pathname)
+    });
 
     return (
         <div>
