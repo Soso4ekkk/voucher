@@ -10,6 +10,17 @@
     flex-direction: column;
 }
 
+textarea {
+    color: #e2228c;
+    font-size: 14pt;
+}
+
+textarea::placeholder {
+    color: #e2228c;
+    font-size: 14pt;
+    font-style: italic;
+}
+
 .textArea-row {
     display: flex;
     justify-content: center;
@@ -37,11 +48,11 @@
 
 .result {
     width: 710px;
-    height: 60px;
+    height: 80px;
     margin: 10px;
     outline: 0;
     border: 0px;
-    background-color: #eee;
+    background: url(../../images/clouds.jpg);
     cursor: url(../../images/auto.png), auto;
 }
 
@@ -84,6 +95,8 @@
     flex-direction: column;
     align-items: center;
     padding: 0px;
+    color: #e2228c;
+    font-style: italic;
     cursor: url(../../images/auto.png), auto;
 }
 

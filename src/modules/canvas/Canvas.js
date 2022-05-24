@@ -53,7 +53,7 @@ class Canvas {
     }
 
     text(str, x, y, colorfill) {
-        this.context.font = '25px serif';
+        this.context.font = 'italic 16pt cursive';
         this.context.fillStyle = colorfill;
         this.context.fillText(str, this.xs(x), this.ys(y));
     }

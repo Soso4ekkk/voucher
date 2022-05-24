@@ -31,9 +31,9 @@ function Calculator() {
             <div className="textArea">
                 <div className="textArea-row">
                     <textarea 
-                    ref={elemA}
-                    className="numbers"
-                    placeholder="0"
+                        ref={elemA}
+                        className="numbers"
+                        placeholder="0"
                     />
                     <textarea 
                         ref={elemB}
@@ -45,25 +45,25 @@ function Calculator() {
                     <textarea
                         ref={elemC}
                         className="result"
-                        placeholder="result"
+                        placeholder="&nbsp;result"
                         disabled={true}
                     />
                 </div>
             </div>
             <div className="button-operation">
                 <div className="button-row">
-                    <button onClick={() => operation("add")}>&nbsp;Add&nbsp;</button>
-                    <button onClick={() => operation("sub")}>&nbsp;Sub&nbsp;</button>
-                    <button onClick={() => operation("mult")}>&nbsp;Mult&nbsp;</button>
+                    <button onClick={() => operation("add")}>&nbsp;add&nbsp;</button>
+                    <button onClick={() => operation("sub")}>&nbsp;sub&nbsp;</button>
+                    <button onClick={() => operation("mult")}>&nbsp;mult&nbsp;</button>
                 </div>
                 <div className="button-row">
-                    <button onClick={() => operation("div")}>&nbsp;Div&nbsp;</button>
-                    <button onClick={() => operation("prod")}>&nbsp;Prod&nbsp;</button>
-                    <button onClick={() => operation("pow")}>&nbsp;Pow&nbsp;</button>
+                    <button onClick={() => operation("div")}>&nbsp;div&nbsp;</button>
+                    <button onClick={() => operation("prod")}>&nbsp;prod&nbsp;</button>
+                    <button onClick={() => operation("pow")}>&nbsp;pow&nbsp;</button>
                 </div>
                 <div className="button-row">
-                    <button onClick={() => operation("one")}>&nbsp;One&nbsp;</button>
-                    <button onClick={() => operation("zero")}>&nbsp;Zero&nbsp;</button>
+                    <button onClick={() => operation("one")}>&nbsp;one&nbsp;</button>
+                    <button onClick={() => operation("zero")}>&nbsp;zero&nbsp;</button>
                 </div>
             </div>
             <div className="inputRules">
