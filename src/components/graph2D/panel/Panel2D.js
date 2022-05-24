@@ -39,7 +39,7 @@ function Panel2D(props) {
                 >добавить</button>
             </div>
             <div className="graph2D-panel-functions">
-                <div className="graph2D-panel-functions-column">
+                <div>
                     {funcs.map((func, index) => 
                         <FuncInputs 
                             key={index}

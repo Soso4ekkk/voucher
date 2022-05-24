@@ -188,7 +188,7 @@ function Graph2D() {
     const addFunction = () => {
         funcs.push({
             f: () => null,
-            color: 'black',
+            color: '#e2228c',
             width: 1,
             startIntegral: null,
             endIntegral: null,

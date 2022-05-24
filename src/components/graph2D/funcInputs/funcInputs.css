@@ -1,13 +1,13 @@
 .functionSettings {
     display: flex;
     flex-direction: column;
-    margin: 10px;
 }
 
 .functionSettings-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
     margin: 5px;
+    align-items: center;
 }
 
 /************* ввод *************/
@@ -16,6 +16,7 @@
     height: 25px;
     border: 1px solid #ffffff;
     outline: 0;
+    margin-right: 10px;
 }
 
 .inputFunction:hover {
@@ -44,6 +45,7 @@
     height: 25px;
     background: #ffffff;
     cursor: url(../../../images/pointer.png), auto;
+    margin-right: 10px;
 }
 
 .checkDerevative:checked {
@@ -70,17 +72,20 @@
     cursor: url(../../../images/pointer.png), auto;
 }
 
+.deleteFunction:hover {
+    background: #ffc8fc;
+}
+
 /******************** изменить ширину ********************/
 .changeWidth {
-    margin-left: 10px;
     -webkit-appearance: none;
     border-radius: 7px;
-    width: 220px;
+    width: 200px;
     height: 8px;
     background: #ffffff;
     border: none;
-    margin-bottom: 30px;
     cursor: url(../../../images/pointer.png), auto;
+    margin-right: 10px;
 }
 
 .changeWidth::-webkit-slider-thumb {

@@ -7,7 +7,6 @@ body {
 /********** главная страница **********/
 .main_page {
     display: flex;
-    width: 100%;
     justify-content: space-around;
     flex-wrap: nowrap;
     margin: 0px 0px 20px 0px;

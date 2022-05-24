@@ -1,7 +1,8 @@
 .graph2D-panel {
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    padding: 5px 10px 10px 10px;
+    background-color: #ffc8fc;
 }
 
 .graph2D-panel-close {
@@ -13,18 +14,11 @@
 .graph2D-panel-add {
     display: flex;
     justify-content: flex-start;
-    margin: 5px 5px 10px 5px;
 }
 
 .graph2D-panel-functions {
     display: flex;
     justify-content: start;
-    margin: 5px;
-}
-
-.graph2D-panel-functions-column {
-    display: flex;
-    flex-direction: column;
 }
 
 /***************** закрыть панель *****************/
@@ -53,6 +47,7 @@
     border: 0px;
     border-radius: 0px;
     border: 0px solid #ffffff;
+    margin-bottom: 10px;
     font-family: monospace;
     cursor: url(../../../images/pointer.png), auto;
 }

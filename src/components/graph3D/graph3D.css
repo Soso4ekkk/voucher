@@ -32,8 +32,8 @@ label {
 .check3D {
     -webkit-appearance: none;
     border: 1px solid #ffffff;
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     margin-bottom: -3px;
     margin-left: 5px;
     background: #ffffff;
@@ -51,11 +51,12 @@ label {
 }
 
 .figures {
+    -webkit-appearance: none;
     height: 40px;
     width: 325px;
     font-size: 16pt;
     background: #ffd8fd;
-    border: 1px solid #ffd8fc;
+    border: none;
     font-family: monospace;
     outline: 0;
     cursor: url(../../images/pointer.png), auto;
