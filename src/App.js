@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import ROUTES from './components/ROUTES/Routes';
 import Header from './components/header/Header';
-import Meme from './components/meme/Meme';
 
 import Calculator from './components/calculator/Calculator';
 import Graph2D from './components/graph2D/Graph2D';
@@ -30,7 +29,6 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <div className="header-row"><Header ROUTES = {ROUTES}/></div>
-                <div className="meme-row"><Meme/></div>
                 <Routes>
                     <Route exact path = {ROUTES.MAIN.path} element = {<Calculator/>}/>
                     <Route exact path = {ROUTES.CALCULATOR.path} element = {<Calculator/>}/>
