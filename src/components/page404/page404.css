@@ -4,13 +4,24 @@
     background-attachment: fixed;
     opacity: 0.5;
     height: 1000px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.page404-row  {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    line-height: 0%;
+    height: 150px;
+    margin-top: 60px;
 }
 
 .textError {
     font-size: 100pt;
-    text-align: center;
     font-family: monospace;
-    opacity: 100%;
     line-height: 0;
     font-weight: bolder;
 }
@@ -18,5 +29,6 @@
 .textErrorNumber {
     font-size: 180pt;
     font-weight: bold;
-    line-height: -4;
+    font-family: monospace;
+    line-height: 0;
 }
