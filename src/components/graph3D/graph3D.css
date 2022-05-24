@@ -34,8 +34,7 @@ label {
     border: 1px solid #ffffff;
     width: 17px;
     height: 17px;
-    margin-bottom: -3px;
-    margin-left: 5px;
+    margin: 10px 0 -3px 5px;
     background: #ffffff;
     cursor: url(../../images/pointer.png), auto;
 }
@@ -61,6 +60,7 @@ label {
     outline: 0;
     cursor: url(../../images/pointer.png), auto;
     margin-top: 20px;
+    padding-left: 10px;
 }
 
 .figures:hover {

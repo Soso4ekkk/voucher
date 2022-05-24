@@ -9,7 +9,8 @@ import Point from '../../modules/graph3D/entities/Point';
 
 import './graph3D.css';
 
-const img = require('../../images/space.jpg');
+const spaceCanvas = require('../../images/space.jpg');
+const cloudsCanvas = require('../../images/cloudsCanvas.jpg');
 
 function Graph3D() {
     let canvas;
@@ -59,9 +60,13 @@ function Graph3D() {
     let dx = 0;
     let dy = 0;
 
+    //основной фон канваса
+    let clouds = new Image();
+    clouds.src = cloudsCanvas;
+
     // фон солнечной системы для анимации
     let space = new Image();
-    space.src = img;
+    space.src = spaceCanvas;
 
     // переменные для FPS
     let fps = 0;
@@ -228,6 +233,7 @@ function Graph3D() {
     const run = () => {
         // очистка экрана
         canvas.clear();
+        canvas.drawImg(clouds, 0, 0, 600, 600);
 
         // вывод фона и текста для анимации солнечной системы
         if (flags.animation && animations.length !== 0) {
