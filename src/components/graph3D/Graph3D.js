@@ -79,8 +79,8 @@ function Graph3D() {
         canvas = new Canvas({
             WIN: WIN,
             id: 'canvas3D',
-            width: 600,
-            height: 600
+            width: 590,
+            height: 590
         });
 
         math = new Math3D({
@@ -318,21 +318,23 @@ function Graph3D() {
         }
 
         // вывод источника света
-        canvas.arc3D(
-            math.getProection(LIGHT).x,
-            math.getProection(LIGHT).y,
-            10,
-            '#ffffff'
-        );
-        canvas.arc3D(
-            math.getProection(LIGHT).x,
-            math.getProection(LIGHT).y,
-            8,
-            '#ffff63'
-        );
+        if (flags.light) {
+            canvas.arc3D(
+                math.getProection(LIGHT).x,
+                math.getProection(LIGHT).y,
+                10,
+                '#ffffff'
+            );
+            canvas.arc3D(
+                math.getProection(LIGHT).x,
+                math.getProection(LIGHT).y,
+                8,
+                '#ffff63'
+            );
+        }
 
         // вывод FPS
-        canvas.text(`FPS: ${FPS}`, -9.6, 9, '#e2228c');
+        canvas.text(`fps: ${FPS}`, -9.6, 9, '#e2228c');
     }
 
     return (

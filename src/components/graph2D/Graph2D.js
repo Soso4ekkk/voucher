@@ -29,8 +29,8 @@ function Graph2D() {
         canvas = new Canvas({
             WIN: WIN,
             id: 'canvas2D',
-            width: 600,
-            height: 600,
+            width: 590,
+            height: 590,
         });
         
         const animLoop = () => {
