@@ -1,0 +1,22 @@
+.page404  {
+    background: url("../../images/page404.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+    opacity: 0.5;
+    height: 1000px;
+}
+
+.textError {
+    font-size: 100pt;
+    text-align: center;
+    font-family: monospace;
+    opacity: 100%;
+    line-height: 0;
+    font-weight: bolder;
+}
+
+.textErrorNumber {
+    font-size: 180pt;
+    font-weight: bold;
+    line-height: -4;
+}
