@@ -26,7 +26,7 @@ function Header(props) {
                 <div 
                     className="field"
                     onClick={() => navigate(-1)}
-                >Назад</div>
+                >назад</div>
             </div>
         </div>
     );

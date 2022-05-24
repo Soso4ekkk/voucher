@@ -5,15 +5,15 @@ const ROUTES = {
     },
     CALCULATOR: {
         path: '/calculator',
-        title: 'Калькулятор'
+        title: 'калькулятор'
     },
     GRAPH2D: {
         path: '/graph2D',
-        title: 'Графика 2D'
+        title: 'графика 2D'
     },
     GRAPH3D: {
         path: '/graph3D',
-        title: 'Графика 3D'
+        title: 'графика 3D'
     }
 }
 
