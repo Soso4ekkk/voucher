@@ -42,7 +42,7 @@ function Graph3D() {
     };
 
     // источник света
-    let LIGHT = new Light(-30, 30, 0, 37500);
+    let LIGHT = new Light(-20, 20, 0, 37500);
 
     // массивы фигур и связанных анимаций
     let figures = [];
@@ -60,7 +60,7 @@ function Graph3D() {
     let dx = 0;
     let dy = 0;
 
-    //основной фон канваса
+    // основной фон канваса
     let clouds = new Image();
     clouds.src = cloudsCanvas;
 
@@ -233,6 +233,8 @@ function Graph3D() {
     const run = () => {
         // очистка экрана
         canvas.clear();
+
+        // заливка фона канваса
         canvas.drawImg(clouds, 0, 0, 600, 600);
 
         // вывод фона и текста для анимации солнечной системы

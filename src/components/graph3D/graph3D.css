@@ -8,128 +8,6 @@ canvas {
     padding: 0 10px 10px 10px;
 }
 
-.panel3d {
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px 10px 10px;
-}
-
-/********************** panel3D **********************/
-label {
-    cursor: url(../../images/auto.png), auto;
-}
-
-.checkbox {
-    font-size: 15pt;
-    width: 200px;
-    font-family: monospace;
-    font-size: 16pt;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.check3D {
-    -webkit-appearance: none;
-    border: 1px solid #ffffff;
-    width: 17px;
-    height: 17px;
-    margin: 10px 0 -3px 5px;
-    background: #ffffff;
-    cursor: url(../../images/pointer.png), auto;
-}
-
-.check3D:checked {
-    background: #ffc8fc;
-    transform: scale(1.5);
-}
-
-.check3D:hover {
-    background: #ffc8fc;
-    transform: scale(1.5);
-}
-
-.figures {
-    -webkit-appearance: none;
-    height: 40px;
-    width: 325px;
-    font-size: 16pt;
-    background: #ffd8fd;
-    border: none;
-    font-family: monospace;
-    outline: 0;
-    cursor: url(../../images/pointer.png), auto;
-    margin-top: 20px;
-    padding-left: 10px;
-}
-
-.figures:hover {
-    background: #ffc8fc;
-}
-
-.delete {
-    background: #ffd8fd;
-    color: rgb(0, 0, 0);
-    font-size: 13pt;
-    width: 100px;
-    height: 30px;
-    border: 1px solid #ffd8fc;
-    border-radius: 0px;
-    font-family: monospace;
-    cursor: url(../../images/pointer.png), auto;
-    margin: 20px 0 0 0;
-}
-
-.delete:hover {
-    background: #ffc8fc;
-}
-
-.powerlight {
-    -webkit-appearance: none;
-    border: 1px solid #ffc8fc;
-    border-radius: 7px;
-    height: 78px;
-    width: 325px;
-    border: none;
-    background: url(/src//images/clouds.jpg);
-    cursor: url(../../images/pointer.png), auto;
-    margin-top: 40px;
-}
-
-.powerlight::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background: url(/src/images/trusov-bird.png);
-    height: 70px;
-    width: 60px;
-}
-
-.powerlight:hover {
-    transform: scale(1.05);
-}
-
-.color {
-    height: 90px;
-    width: 90px;
-    background-color: #ffd8fd;
-    border: 0px;
-    border-radius: 7px;
-    background: url(/src/images/clouds.jpg);
-    cursor: url(../../images/pointer.png), auto;
-    margin-top: 30px;
-}
-
-.color::-webkit-color-swatch {
-    border: 0px;
-    margin: 15px;  
-    border-radius: 3px;
-}
-
-.color:hover {
-    transform: scale(1.05);
-}
-
-/*****************************************************/
-
 /******************** правила ********************/
 .keysRules {
     display: flex;
@@ -142,7 +20,7 @@ label {
     display: flex;
     align-items: center;
     font-size: 20pt;
-    font-family: monospace;
+    font-family: cursive;
     color: #e2228c;
     margin-bottom: 20px;
 }
@@ -157,6 +35,7 @@ label {
     margin: 5px;
     padding: 1px 10px 1px 10px;
     border-radius: 5px;
+    font-size: 21pt;
     background: url(../../images/cloudsSmall.jpg);
 }
 
@@ -171,6 +50,7 @@ label {
 .textRules {
     display: flex;
     font-family: monospace;
+    font-style: italic;
     font-size: 13pt;
     cursor: url(../../images/auto.png), auto;
 }

@@ -17,6 +17,8 @@ import surprise from '../../../modules/graph3D/figures/surprise';
 
 import Planets from "../../../modules/graph3D/figures/Planets";
 
+import './panel3D.css';
+
 function Panel3D(props) {
     const { 
         flags, 
@@ -187,7 +189,7 @@ function Panel3D(props) {
                         onChange={points} 
                         defaultChecked={flags.drawPoints}
                     ></input>
-                    &nbsp;точки
+                    &nbsp;&nbsp;точки
                 </label> 
                 <label>
                     <input 
@@ -196,7 +198,7 @@ function Panel3D(props) {
                         onChange={edges} 
                         defaultChecked={flags.drawEdges}
                     ></input>
-                    &nbsp;ребра
+                    &nbsp;&nbsp;ребра
                 </label>
                 <label>
                     <input  
@@ -205,7 +207,7 @@ function Panel3D(props) {
                         onChange={polygons} 
                         defaultChecked={flags.drawPolygons}
                     ></input>
-                    &nbsp;полигоны
+                    &nbsp;&nbsp;полигоны
                 </label>
                 <label>
                     <input 
@@ -214,7 +216,7 @@ function Panel3D(props) {
                         onChange={anim} 
                         defaultChecked={flags.animation}
                     ></input>
-                    &nbsp;анимация
+                    &nbsp;&nbsp;анимация
                 </label>
                 <label>
                     <input
@@ -223,7 +225,7 @@ function Panel3D(props) {
                         onChange={shadow} 
                         defaultChecked={flags.dark}
                     ></input>
-                    &nbsp;тени
+                    &nbsp;&nbsp;тени
                 </label>
                 <label>
                     <input
@@ -232,7 +234,7 @@ function Panel3D(props) {
                         onChange={shine} 
                         defaultChecked={flags.light}
                     ></input>
-                    &nbsp;свет
+                    &nbsp;&nbsp;свет
                 </label>  
             </div> 
             <select 
@@ -265,7 +267,7 @@ function Panel3D(props) {
                 onChange={setPowerLight}
                 defaultValue={LIGHT.lumen}
             ></input>
-            <input className="color" type="color" onChange={setColor} defaultValue="#e2228c"></input>
+            <input className="color" type="color" onChange={setColor} defaultValue="#ffc8fc"></input>
         </div>
     );
 }

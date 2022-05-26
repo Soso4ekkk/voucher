@@ -1,0 +1,133 @@
+.panel3d {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px 10px;
+}
+
+label {
+    cursor: url(../../../images/auto.png), auto;
+}
+
+/* точки, ребра, полигоны, анимация, тени, свет */
+.checkbox {
+    font-size: 15pt;
+    width: 200px;
+    font-family: cursive;
+    font-size: 16pt;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.check3D {
+    -webkit-appearance: none;
+    border: 1px solid #ffffff;
+    width: 17px;
+    height: 17px;
+    margin: 10px 0 -3px 5px;
+    background: #ffffff;
+    cursor: url(../../../images/pointer.png), auto;
+}
+
+.check3D:checked {
+    background: #ffc8fc;
+    transform: scale(1.5);
+}
+
+.check3D:hover {
+    background: #ffc8fc;
+    transform: scale(1.5);
+}
+
+/************************************************/
+
+/************* список фигур *************/
+.figures {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 325px;
+    font-size: 16pt;
+    background: #ffd8fd;
+    border: none;
+    font-family: cursive;
+    outline: 0;
+    cursor: url(../../../images/pointer.png), auto;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.figures:hover {
+    background: #ffc8fc;
+}
+
+/****************************************/
+
+/********** кнопка удалить **********/
+.delete {
+    background: #ffd8fd;
+    color: rgb(0, 0, 0);
+    font-size: 13pt;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ffd8fc;
+    border-radius: 0px;
+    font-family: cursive;
+    cursor: url(../../../images/pointer.png), auto;
+    margin: 20px 0 0 0;
+}
+
+.delete:hover {
+    background: #ffc8fc;
+}
+
+/************************************/
+
+/********** мощность источника света **********/
+.powerlight {
+    -webkit-appearance: none;
+    border: 1px solid #ffc8fc;
+    border-radius: 7px;
+    height: 78px;
+    width: 325px;
+    border: none;
+    background: url(/src/images/clouds.jpg);
+    cursor: url(../../../images/pointer.png), auto;
+    margin-top: 40px;
+}
+
+.powerlight::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: url(/src/images/trusov-bird.png);
+    height: 70px;
+    width: 60px;
+}
+
+.powerlight:hover {
+    transform: scale(1.05);
+}
+
+/**********************************************/
+
+/********** изменить цвет **********/
+.color {
+    height: 90px;
+    width: 90px;
+    background-color: #ffd8fd;
+    border: 0px;
+    border-radius: 7px;
+    background: url(/src/images/clouds.jpg);
+    cursor: url(../../../images/pointer.png), auto;
+    margin-top: 30px;
+}
+
+.color::-webkit-color-swatch {
+    border: 0px;
+    margin: 15px;  
+    border-radius: 3px;
+}
+
+.color:hover {
+    transform: scale(1.05);
+}
+
+/***********************************/ 

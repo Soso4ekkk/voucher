@@ -5,8 +5,9 @@ import UI from './ui/UI';
 
 import './graph2D.css';
 
-function Graph2D() {
+const cloudsCanvas = require('../../images/cloudsCanvas.jpg');
 
+function Graph2D() {
     let canvas; 
 
     const WIN = {
@@ -25,12 +26,16 @@ function Graph2D() {
     // производная по OX
     let derivativeX = 0;
 
+    // основной фон канваса
+    let clouds = new Image();
+    clouds.src = cloudsCanvas;
+
     useEffect(() => {
         canvas = new Canvas({
             WIN: WIN,
             id: 'canvas2D',
-            width: 590,
-            height: 590,
+            width: 580,
+            height: 580,
         });
         
         const animLoop = () => {
@@ -187,9 +192,9 @@ function Graph2D() {
     // добавляет функцию
     const addFunction = () => {
         funcs.push({
-            f: () => null,
-            color: '#e2228c',
-            width: 1,
+            f: () => undefined,
+            color: '#ffc8fc',
+            width: 5,
             startIntegral: null,
             endIntegral: null,
             derivativeX: false,
@@ -206,6 +211,9 @@ function Graph2D() {
     const runn = () => {
         // очистка экрана
         canvas.clear();
+
+        // заливка фона канваса
+        canvas.drawImg(clouds, 0, 0, 600, 600);
 
         // вывод разметки
         printOXY();
