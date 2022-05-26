@@ -17,6 +17,7 @@
     border: 1px solid #ffffff;
     outline: 0;
     margin-right: 10px;
+    cursor: url(../../../images/pointer.png), auto;
 }
 
 input::placeholder {
@@ -39,6 +40,7 @@ input::placeholder {
     height: 25px;
     border: 0px;
     outline: 0;
+    cursor: url(../../../images/auto.png), auto;
 }
 
 /************ рисовать/не рисовать производную  ************/

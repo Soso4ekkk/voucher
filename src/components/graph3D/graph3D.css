@@ -33,9 +33,11 @@ canvas {
 
 .keysRules_button p {
     margin: 5px;
-    padding: 1px 10px 1px 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 5px;
     font-size: 21pt;
+    font-family: cursive;
     background: url(../../images/cloudsSmall.jpg);
 }
 
@@ -49,8 +51,7 @@ canvas {
 
 .textRules {
     display: flex;
-    font-family: monospace;
-    font-style: italic;
+    font-family: cursive;
     font-size: 13pt;
     cursor: url(../../images/auto.png), auto;
 }
