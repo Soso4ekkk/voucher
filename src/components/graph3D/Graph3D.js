@@ -79,8 +79,8 @@ function Graph3D() {
         canvas = new Canvas({
             WIN: WIN,
             id: 'canvas3D',
-            width: 590,
-            height: 590
+            width: 580,
+            height: 580
         });
 
         math = new Math3D({
@@ -372,7 +372,7 @@ function Graph3D() {
                                 <p>D</p>
                             </div>
                         </div>
-                        <p className="textRules">&nbsp;-&nbsp;движение фигур</p>
+                        <p className="textRules">&nbsp;&nbsp;-&nbsp;движение фигур</p>
                     </div>
                     <div className="keysRules-wrapper">
                         <div className="keysRules_button">
@@ -383,7 +383,7 @@ function Graph3D() {
                                 <p>→</p>
                             </div>
                         </div>
-                        <p className="textRules">&nbsp;-&nbsp;движение света</p>
+                        <p className="textRules">&nbsp;&nbsp;-&nbsp;движение света</p>
                     </div>
                 </div>
             </div>
