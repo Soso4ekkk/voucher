@@ -18,7 +18,7 @@ textarea {
 textarea::placeholder {
     color: #e2228c;
     font-size: 14pt;
-    font-style: italic;
+    font-family: cursive;
 }
 
 .textArea-row {
@@ -79,7 +79,7 @@ textarea::placeholder {
     height: 40px;
     border: 0px;
     border-radius: 0px;
-    font-family: monospace;
+    font-family: cursive;
     cursor: url(../../images/pointer.png), auto;
 }
 
@@ -96,20 +96,20 @@ textarea::placeholder {
     align-items: center;
     padding: 0px;
     color: #e2228c;
-    font-style: italic;
+    font-family: cursive;
     cursor: url(../../images/auto.png), auto;
 }
 
 .headerRules p {
     font-size: 18pt;
-    font-family: monospace;
+    font-family: cursive;
     font-weight: 600;
     margin: 5px;
 }
 
 .pointsRules p {
     font-size: 16pt;
-    font-family: monospace;
+    font-family: cursive;
     margin: 2px;
 }
 

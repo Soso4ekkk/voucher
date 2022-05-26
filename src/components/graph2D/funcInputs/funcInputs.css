@@ -19,6 +19,10 @@
     margin-right: 10px;
 }
 
+input::placeholder {
+    font-family: cursive;
+}
+
 .inputFunction:hover {
     background: #ffd8fd;
 }
@@ -41,8 +45,8 @@
 .checkDerevative {
     -webkit-appearance: none;
     border: 1px solid #ffffff;
-    width: 25px;
-    height: 25px;
+    width: 17px;
+    height: 17px;
     background: #ffffff;
     cursor: url(../../../images/pointer.png), auto;
     margin-right: 10px;
@@ -50,12 +54,12 @@
 
 .checkDerevative:checked {
     background: #ffc8fc;
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 .checkDerevative:hover {
     background: #ffc8fc;
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 /***********************************************************/
@@ -68,7 +72,7 @@
     width: 90px;
     height: 28px;
     border: 0px;
-    font-family: monospace;
+    font-family: cursive;
     cursor: url(../../../images/pointer.png), auto;
 }
 
@@ -107,14 +111,17 @@
 /******************** изменить цвет ********************/
 .changeColor {
     border: 0px;
-    width: 46px;
-    height: 40px;
-    background-color: #ffd8fd;
+    width: 47px;
+    height: 47px;
+    border-radius: 7px;
+    background: url(/src/images/cloudsSmall.jpg);
     cursor: url(../../../images/pointer.png), auto;
 }
 
 .changeColor::-webkit-color-swatch {
     border: 0px;
+    border-radius: 3px;
+    margin: 3px;
 }
 
 .changeColor:hover {
