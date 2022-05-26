@@ -30,6 +30,11 @@ function Graph2D() {
     let clouds = new Image();
     clouds.src = cloudsCanvas;
 
+    // переменные для FPS
+    let fps = 0;
+    let FPS = 0;
+    let lastTimestamp = Date.now();
+
     useEffect(() => {
         canvas = new Canvas({
             WIN: WIN,
@@ -39,6 +44,14 @@ function Graph2D() {
         });
         
         const animLoop = () => {
+            // вычисление FPS
+            fps++;
+            const timestamp = Date.now();
+            if (timestamp - lastTimestamp >= 1000) {
+                FPS = fps;
+                fps = 0;
+                lastTimestamp = timestamp;
+            }
             // вывод всей сцены
             runn();
             window.requestAnimFrame(animLoop);
@@ -147,8 +160,8 @@ function Graph2D() {
                 if (f(x) - f(x + dx) < HEIGHT && f(x + dx) - f(x) < HEIGHT) {
                     canvas.line(x, f(x), x + dx, f(x + dx), color, width);
                     // рисует нули функции
-                    if (getZero(f, x, x + dx, 0.001) != null) {
-                        canvas.point(getZero(f, x, x + dx, 0.001), 0, 2, 'red');
+                    if (getZero(f, x, x + dx, 0.001) === null) {
+                        canvas.point(getZero(f, x, x + dx, 0.001), 0, 2, 'black');
                     }
                 }
             } catch (e) {}
@@ -174,7 +187,7 @@ function Graph2D() {
     const printDerivative = (f, x0) => {
         const k = getDerivative(f, x0);
         // пересечение касательной с функцией
-        canvas.point(x0, f(x0), 2, 'green');
+        canvas.point(x0, f(x0), 2, '#e2228c');
         // угол касательной к оси OX
         if (Math.atan(k) <= 0) {
             canvas.duga((k * x0 - f(x0)) / k, 0, 15, 0, Math.PI - Math.atan(k));
@@ -186,7 +199,7 @@ function Graph2D() {
         const x2 = WIN.LEFT + WIN.WIDTH;
         const y1 = k * x1 + b;
         const y2 = k * x2 + b;
-        canvas.line(x1, y1, x2, y2, 'blue', 1, true);
+        canvas.line(x1, y1, x2, y2, '#e2228c', 1, true);
     }
 
     // добавляет функцию
@@ -240,6 +253,9 @@ function Graph2D() {
                 }
             }
         }
+
+        // вывод FPS
+        canvas.text(`fps: ${FPS}`, -9.6, 9, '#e2228c');
     }
 
     return (
