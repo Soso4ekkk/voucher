@@ -10,9 +10,9 @@ import ellipticalCylinder from '../../../modules/graph3D/figures/ellipticalCylin
 import ellipticalParaboloid from '../../../modules/graph3D/figures/ellipticalParaboloid';
 import hyperbolicCylinder from '../../../modules/graph3D/figures/hyperbolicCylinder';
 import hyperbolicParaboloid from '../../../modules/graph3D/figures/hyperbolicParaboloid';
+import parabolicCylinder from '../../../modules/graph3D/figures/parabolicCylinder';
 import oneSheetedHyperboloid from '../../../modules/graph3D/figures/oneSheetedHyperboloid';
 import twoSheetedHyperboloid from '../../../modules/graph3D/figures/twoSheetedHyperboloid';
-import parabolicCylinder from '../../../modules/graph3D/figures/parabolicCylinder';
 import surprise from '../../../modules/graph3D/figures/surprise';
 
 import Planets from "../../../modules/graph3D/figures/Planets";
@@ -101,19 +101,19 @@ function Panel3D(props) {
             case 'гиперболический параболоид':
                 figures.push(new hyperbolicParaboloid());
                 break;
-            case 'двухполостный гиперболоид':
-                figures.push(new twoSheetedHyperboloid());
-                break;
-            case 'однополостный гиперболоид':
-                figures.push(new oneSheetedHyperboloid());
-                break;
             case 'параболический цилиндр':
                 figures.push(new parabolicCylinder());
                 break;
-            case 'сюрприз :)':
+            case 'однополостной гиперболоид':
+                figures.push(new oneSheetedHyperboloid());
+                break;
+            case 'двуполостной гиперболоид':
+                figures.push(new twoSheetedHyperboloid());
+                break;
+            case 'сюрприз 🎂':
                 figures.push(new surprise());
                 break;
-            case 'солнечная система':
+            case 'солнечная система 🌌':
                 planets.figures.forEach(figure => {
                     figures.push(figure);
                 });
@@ -250,13 +250,13 @@ function Panel3D(props) {
                 <option>эллипсоид</option>
                 <option>эллиптический параболоид</option>
                 <option>эллиптический цилиндр</option>
-                <option>однополостный гиперболоид</option>
-                <option>двухполостный гиперболоид</option>
                 <option>гиперболический цилиндр</option>
                 <option>гиперболический параболоид</option>
                 <option>параболический цилиндр</option>
-                <option>сюрприз :)</option>
-                <option>солнечная система</option>
+                <option>однополостной гиперболоид</option>
+                <option>двуполостной гиперболоид</option>
+                <option>сюрприз 🎂</option>
+                <option>солнечная система 🌌</option>
             </select>
             <button className="delete" onClick={deleteFigure}>удалить</button>
             <input 

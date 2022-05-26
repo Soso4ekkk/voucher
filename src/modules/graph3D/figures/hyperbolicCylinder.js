@@ -44,7 +44,7 @@ function hyperbolicCylinder(count = 10, a = 5, b = 2) {
             edges.push(new Edge(i, i + count));
     }
 
-    for (let i = points.length / 2 + count; i < points.length; i++) {
+    for (let i = points.length / 2; i < points.length; i++) {
         // вдоль
         if (i + 1 < points.length && (i + 1) % count !== 0) 
             edges.push(new Edge(i, i + 1));

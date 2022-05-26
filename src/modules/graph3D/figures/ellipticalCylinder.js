@@ -10,7 +10,7 @@ function ellipticalCylinder(count = 20, h = 15, a = 6, b = 10) {
 
     // точки
     const dt = 2 * Math.PI / count;
-    for (let p = 0; p < h; p = p + 2) {
+    for (let p = -h; p < h; p = p + 2) {
         for (let i = 0; i <= Math.PI; i += 2 * dt + count) {
             for (let j = 0; j < 2 * Math.PI; j += dt) {
                 points.push(new Point(

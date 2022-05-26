@@ -19,6 +19,7 @@ function twoSheetedHyperboloid(count = 20, a = 1, b = 1, c = 1) {
             ));
         }
     }
+
     for (let i = 0; i <= Math.PI; i += dt) {
         for (let j = 0; j < 2 * Math.PI; j += dt) {
             points.push(new Point(
@@ -32,12 +33,30 @@ function twoSheetedHyperboloid(count = 20, a = 1, b = 1, c = 1) {
     /*************************************************/
 
     // ребра
-    for (let i = 0; i < points.length; i++) {
+    for (let i = 0; i < points.length / 2; i++) {
         // вдоль
-        if (i + 1 < points.length && (i + 1) % count !== 0)
+        if (i + 1 < points.length && (i + 1) % count !== 0) {
             edges.push(new Edge(i, i + 1));
-        else if (i + 1 >= count && (i + 1) % count === 0) 
+        } else if ((i + 1) % count === 0) {
             edges.push(new Edge(i, i + 1 - count));
+        }
+        // поперек
+        if (i < points.length / 2 - count) {
+            edges.push(new Edge(i, i + count));
+        }
+    }
+    
+    for (let i = points.length / 2 + count; i < points.length; i++) {
+        // вдоль
+        if (i + 1 < points.length && (i + 1) % count !== 0) {
+            edges.push(new Edge(i, i + 1));
+        } else if ((i + 1) % count === 0) {
+            edges.push(new Edge(i, i + 1 - count));
+        }
+        // поперек
+        if (i < points.length - count) {
+            edges.push(new Edge(i, i + count));
+        }
     }
 
     /******************************** полигоны ********************************/

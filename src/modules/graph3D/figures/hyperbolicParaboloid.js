@@ -22,13 +22,13 @@ function hyperbolicParaboloid(count = 20, a = 3, b = 2) {
     // ребра
     for (let i = 0; i < points.length; i++) {
         // вдоль
-        if (i + 1 < points.length && (i + 1) % count !== 0) 
+        if (i + 1 < points.length && (i + 1) % count !== 0) {
             edges.push(new Edge(i, i + 1));
-        else if ((i + 1) % count === 0) 
-            edges.push(new Edge(i, i + 1 - count));
+        }
         // поперек
-        if (i < points.length - count) 
+        if (i < points.length - count) {
             edges.push(new Edge(i, i + count));
+        }
     }
 
     // полигоны
