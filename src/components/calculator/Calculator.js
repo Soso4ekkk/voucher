@@ -45,7 +45,7 @@ function Calculator() {
                     <textarea
                         ref={elemC}
                         className="result"
-                        placeholder="&nbsp;result"
+                        placeholder="result"
                         disabled={true}
                     />
                 </div>
