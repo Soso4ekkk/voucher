@@ -21,7 +21,6 @@
 
 .textError {
     font-size: 100pt;
-    font-family: monospace;
     font-family: cursive;
     line-height: 0;
     font-weight: bolder;
@@ -30,7 +29,6 @@
 .textErrorNumber {
     font-size: 180pt;
     font-weight: bold;
-    font-family: monospace;
     font-family: cursive;
     line-height: 0;
 }
