@@ -1,5 +1,5 @@
 class Canvas {
-    constructor({WIN, id, width = 600, height = 600}) {
+    constructor({WIN, id, width, height}) {
         this.WIN = WIN;
         this.canvas = document.getElementById(id);
         this.canvas.width = width;
@@ -21,6 +21,14 @@ class Canvas {
     
     sy(y) {
         return this.WIN.HEIGHT * y / this.canvas.height;
+    }
+
+    canvasX(x) {
+        return x / this.canvas.width;
+    }
+    
+    canvasY(y) {
+        return y / this.canvas.height;
     }
 
     clear() {
@@ -53,9 +61,15 @@ class Canvas {
     }
 
     text(str, x, y, colorfill) {
-        this.context.font = 'italic 18pt monospace';
+        this.context.font = '18pt cursive';
         this.context.fillStyle = colorfill;
         this.context.fillText(str, this.xs(x), this.ys(y));
+    }
+
+    text2D(str, x, y, colorfill) {
+        this.context.font = '18pt cursive';
+        this.context.fillStyle = colorfill;
+        this.context.fillText(str, this.canvasX(x), this.canvasY(y));
     }
 
     arc(x1, y1, r = 2, color = 'black') {
