@@ -354,7 +354,7 @@ function Graph3D() {
                 LIGHT={LIGHT}
             />
             <canvas 
-                className="canvas" 
+                className="canvas3D" 
                 id="canvas3D"
                 onWheel={e => wheel(e)}
                 onMouseMove={e => mouseMove(e)}
@@ -362,7 +362,7 @@ function Graph3D() {
                 onMouseDown={() => mouseDown()}
             ></canvas>
             <div className="keysRules">
-                <div>
+                <div className="keysRules-row">
                     <div className="keysRules-wrapper">
                         <div className="keysRules_button">
                             <p>W</p>

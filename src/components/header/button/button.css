@@ -12,7 +12,7 @@
     cursor: url(../../../images/pointer.png), auto;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 570px) {
     .field {
         width: auto;
     }

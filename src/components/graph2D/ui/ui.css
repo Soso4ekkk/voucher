@@ -1,15 +1,39 @@
 .panel2D {
     display: flex;
-    justify-content: flex-start;
+    justify-self: flex-start;
 }
 
 .panel2D-button {
-    margin: 0 20px 20px 20px;
+    margin: 0 0 0 30px;
 }
 
 .panel2D-window {
     width: 300px;
-    margin: 0 20px 20px 20px;
+    margin: 0 0 0 30px;
+}
+
+@media (max-width: 1220px) {
+    .panel2D {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .panel2D-button {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 965px) {
+    .panel2D {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    .panel2D-button {
+        margin: 0;
+    }
+    .panel2D-window {
+        width: 600px;
+    }
 }
 
 /************** кнопка нарисовать график **************/
@@ -18,12 +42,11 @@
     color: rgb(0, 0, 0);
     border: 1px solid #ffd8fc;
     font-size: 16pt;
-    text-align: center;
-    text-decoration: none;
     width: 180px;
-    height: 70px;
+    height: auto;
+    padding: 10px;
     font-family: cursive;
-    padding: 0 10px 10px 10px;
+    align-items: center;
     cursor: url(../../../images/pointer.png), auto;
 }
 

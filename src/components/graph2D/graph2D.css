@@ -1,9 +1,19 @@
 .graph2D {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
-canvas {
-    display: flex;
-    padding: 0 10px 10px 10px;
+.canvas2D {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+@media (max-width: 965px) {
+    .graph2D {
+        flex-direction: column-reverse;
+    }
+    .canvas2D {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }

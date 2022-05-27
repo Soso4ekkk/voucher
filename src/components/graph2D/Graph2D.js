@@ -266,7 +266,7 @@ function Graph2D() {
                 delFunction={delFunction}
             />
             <canvas 
-                className="canvas" 
+                className="canvas2D" 
                 id="canvas2D"
                 onWheel={e => wheel(e)}
                 onMouseMove={e => mouseMove(e)}

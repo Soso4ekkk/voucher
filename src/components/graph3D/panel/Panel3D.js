@@ -236,38 +236,42 @@ function Panel3D(props) {
                     ></input>
                     &nbsp;&nbsp;свет
                 </label>  
-            </div> 
-            <select 
-                className="figures" 
-                onChange={changeFigure}
-            >
-                <option>фигуры</option>
-                <option>конус</option>
-                <option>куб</option>
-                <option>сфера</option>
-                <option>цилиндр</option>
-                <option>тор</option>
-                <option>эллипсоид</option>
-                <option>эллиптический параболоид</option>
-                <option>эллиптический цилиндр</option>
-                <option>гиперболический цилиндр</option>
-                <option>гиперболический параболоид</option>
-                <option>параболический цилиндр</option>
-                <option>однополостной гиперболоид</option>
-                <option>двуполостной гиперболоид</option>
-                <option>сюрприз 🎂</option>
-                <option>солнечная система 🌌</option>
-            </select>
-            <button className="delete" onClick={deleteFigure}>удалить</button>
-            <input 
-                className="powerlight" 
-                type="range" 
-                min="25000" 
-                max="100000"
-                onChange={setPowerLight}
-                defaultValue={LIGHT.lumen}
-            ></input>
-            <input className="color" type="color" onChange={setColor} defaultValue="#ffc8fc"></input>
+            </div>
+            <div className="figures-delete">
+                <select 
+                    className="figures" 
+                    onChange={changeFigure}
+                >
+                    <option>фигуры</option>
+                    <option>конус</option>
+                    <option>куб</option>
+                    <option>сфера</option>
+                    <option>цилиндр</option>
+                    <option>тор</option>
+                    <option>эллипсоид</option>
+                    <option>эллиптический параболоид</option>
+                    <option>эллиптический цилиндр</option>
+                    <option>гиперболический цилиндр</option>
+                    <option>гиперболический параболоид</option>
+                    <option>параболический цилиндр</option>
+                    <option>однополостной гиперболоид</option>
+                    <option>двуполостной гиперболоид</option>
+                    <option>сюрприз 🎂</option>
+                    <option>солнечная система 🌌</option>
+                </select>
+                <button className="delete" onClick={deleteFigure}>удалить</button>
+            </div>
+            <div className="powerlight-color">
+                <input 
+                    className="powerlight" 
+                    type="range" 
+                    min="25000" 
+                    max="100000"
+                    onChange={setPowerLight}
+                    defaultValue={LIGHT.lumen}
+                ></input>
+                <input className="color" type="color" onChange={setColor} defaultValue="#ffc8fc"></input>
+            </div>
         </div>
     );
 }

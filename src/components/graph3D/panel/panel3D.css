@@ -1,7 +1,7 @@
 .panel3d {
     display: flex;
     flex-direction: column;
-    padding: 0 10px 10px 10px;
+    margin: 0 0 0 30px;
 }
 
 label {
@@ -41,6 +41,13 @@ label {
 
 /************************************************/
 
+.figures-delete {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
 /************* список фигур *************/
 .figures {
     -webkit-appearance: none;
@@ -52,7 +59,6 @@ label {
     font-family: cursive;
     outline: 0;
     cursor: url(../../../images/pointer.png), auto;
-    margin-top: 20px;
     padding-left: 10px;
 }
 
@@ -82,6 +88,11 @@ label {
 
 /************************************/
 
+.powerlight-color {
+    display: flex;
+    flex-direction: column;
+}
+
 /********** мощность источника света **********/
 .powerlight {
     -webkit-appearance: none;
@@ -92,7 +103,6 @@ label {
     border: none;
     background: url(/src/images/clouds.jpg);
     cursor: url(../../../images/pointer.png), auto;
-    margin-top: 40px;
 }
 
 .powerlight::-webkit-slider-thumb {
@@ -131,3 +141,70 @@ label {
 }
 
 /***********************************/ 
+
+@media(max-width: 1024px) {
+    .panel3d {
+        margin: 0 30px 30px 30px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: normal;
+    }
+    .figures-delete {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0;
+    }
+    .powerlight-color {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-left: auto;
+    }
+}
+
+@media(max-width: 925px) {
+    .panel3d {
+        flex-wrap: wrap;
+    }
+    .checkbox {
+        margin: 0;
+        margin-right: auto;
+    }
+    .figures-delete {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+    .delete {
+        margin: 0 0 0 10px;
+    }
+    .powerlight-color {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        margin-left: auto;
+        margin-top: -90px;
+    }
+    .color {
+        margin: 0 0 0 10px;
+    }
+}
+
+@media(max-width: 712px) {
+    .checkbox {
+        font-size: 14pt;
+        width: 150px;
+        margin-top: 0;
+    }
+    .figures-delete {
+        margin-right: 0px;
+        margin-left: auto;
+    }
+    .powerlight-color {
+        margin-right: 0px;
+        margin-left: auto;
+    }
+}

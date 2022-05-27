@@ -13,8 +13,9 @@ body {
     padding: 5px 20px 0 20px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 570px) {
     .nav-bar {
         flex-direction: column;
+        width: 100%;
     }
 }
