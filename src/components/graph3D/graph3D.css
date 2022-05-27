@@ -3,6 +3,17 @@
     justify-content: start;
 }
 
+@media (max-width: 1024px) {
+    .graph3D {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .canvas {
+        width: 100%;
+    }
+}
+
 canvas {
     display: flex;
     padding: 0 10px 10px 10px;
