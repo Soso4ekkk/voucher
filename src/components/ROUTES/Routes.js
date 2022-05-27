@@ -9,11 +9,11 @@ const ROUTES = {
     },
     GRAPH2D: {
         path: '/graph2D',
-        title: 'графика 2D'
+        title: '2D графика'
     },
     GRAPH3D: {
         path: '/graph3D',
-        title: 'графика 3D'
+        title: '3D графика'
     }
 }
 
