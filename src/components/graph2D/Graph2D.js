@@ -255,7 +255,7 @@ function Graph2D() {
         }
 
         // вывод FPS
-        canvas.text(`fps: ${FPS}`, -9.6, 9, '#e2228c');
+        canvas.text2D(`fps: ${FPS}`, 7000, 15500, '#e2228c');
     }
 
     return (
