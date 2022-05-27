@@ -16,8 +16,7 @@ function Header(props) {
     });
 
     return (
-        <div>
-            <div className="main_page">
+            <div className="nav-bar">
                 {Object.values(ROUTES).map(route =>
                     route.path !== '/' ?
                     <Button
@@ -32,7 +31,6 @@ function Header(props) {
                     onClick={() => navigate(-1)}
                 >назад</div>
             </div>
-        </div>
     );
 }
 
