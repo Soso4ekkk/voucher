@@ -7,7 +7,9 @@ import './graph2D.css';
 
 const cloudsCanvas = require('../../images/cloudsCanvas.jpg');
 
-function Graph2D() {
+function Graph2D(props) {
+    const { store } = props;
+
     let canvas; 
 
     const WIN = {
@@ -16,9 +18,6 @@ function Graph2D() {
         WIDTH: 20,
         HEIGHT: 20
     };
-
-    // массив функций
-    let funcs = [];
 
     // флажок мышки
     let canMove = false;
@@ -202,28 +201,11 @@ function Graph2D() {
         canvas.line(x1, y1, x2, y2, '#e2228c', 1, true);
     }
 
-    // добавляет функцию
-    const addFunction = () => {
-        funcs.push({
-            f: () => undefined,
-            color: '#ffc8fc',
-            width: 5,
-            startIntegral: null,
-            endIntegral: null,
-            derivativeX: false,
-            square: null,
-            value: null
-        });
-    }
-
-    // удаляет функцию
-    const delFunction = (index) => {
-        funcs.splice(index, 1);
-    }
-
     const runn = () => {
         // очистка экрана
         canvas.clear();
+
+        const funcs = store.getState;
 
         // заливка фона канваса
         canvas.drawImg(clouds, 0, 0, 600, 600);
@@ -260,11 +242,7 @@ function Graph2D() {
 
     return (
         <div className="graph2D">
-            <UI
-                funcs={funcs}
-                addFunction={addFunction}
-                delFunction={delFunction}
-            />
+            <UI store={store}/>
             <canvas 
                 className="canvas2D" 
                 id="canvas2D"

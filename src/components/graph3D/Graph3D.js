@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import Canvas from '../../modules/canvas/Canvas';
 import Math3D from '../../modules/graph3D/Math';
@@ -13,20 +14,25 @@ const spaceCanvas = require('../../images/space.jpg');
 const cloudsCanvas = require('../../images/cloudsCanvas.jpg');
 
 function Graph3D() {
-    let canvas;
-    let math;
+    const [searchParams] = useSearchParams();
+    const surface = searchParams.get('surface');
 
     const WIN = {
             LEFT: -10,
             BOTTOM: -10,
             WIDTH: 20,
             HEIGHT: 20,
-            CAMERA: new Point(0, 0, -50),
-            DISPLAY: new Point(0, 0, -30),
+            CAMERA: new Point(0, 0, 50),
+            DISPLAY: new Point(0, 0, 30),
             P1: new Point(-10, 10, -30), // левый верхний угол
             P2: new Point(-10, -10, -30), // левый нижний угол
             P3: new Point(10, -10, -30) // правый нижний угол
     };
+
+    let canvas;
+    const math = new Math3D({
+        WIN
+    });
 
     // флажок мышки
     let canMove = false;
@@ -77,15 +83,11 @@ function Graph3D() {
 
     useEffect(() => {
         canvas = new Canvas({
-            WIN: WIN,
+            WIN,
             id: 'canvas3D',
             width: 580,
             height: 580
         });
-
-        math = new Math3D({
-            WIN: WIN
-        }); 
 
         const animLoop = () => {
             // вычисление FPS
@@ -352,6 +354,7 @@ function Graph3D() {
                 transform={(matrix, point) => math.transform(matrix, point)}
                 animations={animations}
                 LIGHT={LIGHT}
+                surface={surface}
             />
             <canvas 
                 className="canvas3D" 

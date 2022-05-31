@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import cone from '../../../modules/graph3D/figures/cone';
 import cube from '../../../modules/graph3D/figures/cube';
@@ -27,7 +27,8 @@ function Panel3D(props) {
         move,
         transform,
         animations, 
-        LIGHT
+        LIGHT,
+        surface
     } = props;
 
     let planets = new Planets();
@@ -65,9 +66,9 @@ function Panel3D(props) {
     }
 
     // выбор фигуры
-    const changeFigure = (e) => {
+    const changeFigure = (surface) => {
         let f = 0;
-        switch (e.target.value) {
+        switch (surface) {
             case 'фигуры':
                 f = 1;
                 break;
@@ -122,6 +123,7 @@ function Panel3D(props) {
                 });
                 break;
             default:
+                f = 1;
                 break;
         }
         // вывод фигур по цилиндру
@@ -150,6 +152,10 @@ function Panel3D(props) {
             }
         }
     }
+
+    useEffect(() => {
+        changeFigure(surface);
+    });
 
     // сила освещения
     const setPowerLight = (e) => {
@@ -240,7 +246,7 @@ function Panel3D(props) {
             <div className="figures-delete">
                 <select 
                     className="figures" 
-                    onChange={changeFigure}
+                    onChange={e => changeFigure(e.target.value)}
                 >
                     <option>фигуры</option>
                     <option>конус</option>

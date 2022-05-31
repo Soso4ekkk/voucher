@@ -1,25 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import FuncInputs from '../funcInputs/FuncInputs';
 
 import './panel2D.css';
 
 function Panel2D(props) {
-    const { funcs, addFunction, delFunction, close } = props;
-        
-    const [funcsLength, setFuncsLength] = useState(funcs.length); 
+    const { store, close } = props;
+
+    const [funcsLength, setFuncsLength] = useState(store.length); 
+
+    useEffect(() => {
+        store.subcribe(() => {
+            setFuncsLength(store.getState?.length)
+        });
+    });
 
     // удаляет функцию
     const delFunctionClick = (index) => {
-        delFunction(index);
-        setFuncsLength(funcs.length);
+        store.dispatch({
+            type: 'delFunction',
+            index
+        });
     }
-
-    // добавляет функцию
-    const addFunctionClick = () => {
-        addFunction();
-        setFuncsLength(funcs.length);
-    };
 
     return (
         <div 
@@ -35,12 +37,12 @@ function Panel2D(props) {
             <div className="graph2D-panel-add">
                 <button 
                     className="add"
-                    onClick={addFunctionClick}
+                    onClick={() => store.dispatch({ type: 'addFunction'})}
                 >добавить</button>
             </div>
             <div className="graph2D-panel-functions">
                 <div>
-                    {funcs.map((func, index) => 
+                    {store.getState().map((func, index) => 
                         <FuncInputs 
                             key={index}
                             index={index}

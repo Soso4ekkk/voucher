@@ -4,8 +4,7 @@ import Panel2D from '../panel/Panel2D';
 
 import './ui.css';
 
-function UI(props) {
-    const { funcs, addFunction, delFunction } = props;
+function UI({ store }) {
         
     const [showPanel, setShowPanel] = useState(false);
 
@@ -23,12 +22,7 @@ function UI(props) {
             </div>
             <div className="panel2D-window">
                 {showPanel ? 
-                    <Panel2D 
-                        funcs={funcs} 
-                        close={togglePanel}
-                        addFunction={addFunction}
-                        delFunction={delFunction}
-                    /> 
+                    <Panel2D store={store}/> 
                 : ''}
             </div>
         </div>
