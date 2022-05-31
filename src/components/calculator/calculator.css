@@ -10,6 +10,12 @@
     }
 }
 
+@media(max-width: 570px) {
+    .calculator {
+        align-items: center;   
+    }
+}
+
 /******************* ввод-вывод *******************/
 .textArea {
     display: flex;
@@ -32,6 +38,12 @@ textarea::placeholder {
     justify-content: center;
     align-items: center;
     margin: 0px;
+}
+
+@media(max-width: 980px) {
+    .textArea-row {
+        flex-direction: column;   
+    }
 }
 
 .numbers {
@@ -62,6 +74,12 @@ textarea::placeholder {
     cursor: url(../../images/auto.png), auto;
 }
 
+@media(max-width: 980px) {
+    .result {
+        width: 360px;   
+    }
+}
+
 /**************************************************/
 
 /******************* кнопки операций *******************/
@@ -83,7 +101,12 @@ textarea::placeholder {
     justify-content: center;
 }
 
-
+@media(max-width: 570px) {
+    .button-row {
+        align-items: center;
+        flex-direction: column;
+    }
+}
 
 .button-operation button {
     margin: 10px;
@@ -96,6 +119,12 @@ textarea::placeholder {
     border-radius: 0px;
     font-family: cursive;
     cursor: url(../../images/pointer.png), auto;
+}
+
+@media(max-width: 570px) {
+    .button-operation button {
+        align-items: center;
+    }
 }
 
 .button-operation button:hover {
