@@ -17,6 +17,8 @@ const funcsReduser = (state = [], action) => {
         case 'delFunction':
             state.splice(action.index, 1);
             return state;
+        default:
+            return state;
     }
 }
 

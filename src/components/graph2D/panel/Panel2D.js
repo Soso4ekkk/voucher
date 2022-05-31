@@ -7,12 +7,10 @@ import './panel2D.css';
 function Panel2D(props) {
     const { store, close } = props;
 
-    const [funcsLength, setFuncsLength] = useState(store.length); 
+    const [funcsLength, setFuncsLength] = useState(store.getState().length); 
 
     useEffect(() => {
-        store.subcribe(() => {
-            setFuncsLength(store.getState?.length)
-        });
+        store.subcribe(() => setFuncsLength(store.getState()?.length));
     });
 
     // удаляет функцию

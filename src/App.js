@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import store from './components/store/Store';
+import store from './store/Store';
 import ROUTES from './components/ROUTES/Routes';
 import Header from './components/header/Header';
 
@@ -33,7 +33,7 @@ function App() {
                 <Routes>
                     <Route exact path = {ROUTES.MAIN.path} element = {<Calculator/>}/>
                     <Route exact path = {ROUTES.CALCULATOR.path} element = {<Calculator/>}/>
-                    <Route exact path = {ROUTES.GRAPH2D.path} element = {<Graph2D store = {store}/>}/>
+                    <Route exact path = {ROUTES.GRAPH2D.path} element = {<Graph2D store={store}/>}/>
                     <Route exact path = {ROUTES.GRAPH3D.path} element = {<Graph3D/>}/>
                     <Route path="*" element = {<Page404/>}/>
                 </Routes>

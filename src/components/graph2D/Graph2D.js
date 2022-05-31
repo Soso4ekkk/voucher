@@ -205,7 +205,7 @@ function Graph2D(props) {
         // очистка экрана
         canvas.clear();
 
-        const funcs = store.getState;
+        const funcs = store.getState();
 
         // заливка фона канваса
         canvas.drawImg(clouds, 0, 0, 600, 600);
