@@ -3,20 +3,19 @@ import Edge from '../entities/Edge';
 import Polygon from '../entities/Polygon';
 import Subject from '../entities/Subject';
 
-function parabolicCylinder(count = 10, a = 5, b = 2) {
+function parabolicCylinder(count = 10) {
     const points = [];
     const edges = [];
     const polygons = [];
 
     // точки
-    const dt = 2 * Math.PI / count;
-    for (let i = -Math.PI; i <= Math.PI; i += dt) {
-        for (let j = -Math.PI; j < Math.PI; j += dt) {
-            points.push(new Point(
-                b * Math.sinh(i),
-                a * Math.cosh(i),
-                j * 2
-            ));
+    const size = 5;
+    for (let i = -count; i < count; i++) {
+        for (let j = 0; j < count; j++) {
+            const x = i + size / count;
+            const y = x * x / size;
+            const z = j - size;
+            points.push(new Point(x, y, z));
         }
     }
 
@@ -33,11 +32,43 @@ function parabolicCylinder(count = 10, a = 5, b = 2) {
     }
 
     // полигоны
-    for (let i = 0; i < points.length; i++) {
-        if (i + 1 + count < points.length && (i + 1) % count !== 0) {
-            polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count]));
-        } else if (i + count < points.length && (i + 1) % count === 0) {
-            polygons.push(new Polygon([i, i + 1 - count, i + 1, i + count]))
+    let color1 = '#00ff00'; 
+    let color2 = '#00ffff';   
+    let k = 0;  
+    for (let i = 0; i < points.length / 2 - count; i++) {
+        if ((i % count) == 0) {
+            k++;
+        }
+        if (((i + k ) % 2) < 1) {
+            if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color1));
+            } else if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color1))
+            }
+        } else {
+            if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color2));
+            } else if (i + 1 + count < points.length && (i + 1) % count !== 0) {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color2))
+            }
+        }
+    }
+    for (let i = points.length / 2; i < points.length; i++) {
+        if ((i % count) == 0) {
+            k++;
+        }
+        if (((i + k ) % 2) < 1) {
+            if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color1));
+            } else if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color1))
+            }
+        } else {
+            if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color2));
+            } else if (i + 1 + count < points.length && (i + 1) % count !== 0) {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color2))
+            }
         }
     }
 

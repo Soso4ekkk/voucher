@@ -58,19 +58,36 @@ function hyperbolicCylinder(count = 10, a = 5, b = 2) {
     /*****************************************************************/
 
     /******************************* полигоны *******************************/
+    let color1 = '#00ff00'; 
+    let color2 = '#00ffff';   
     for (let i = 0; i < points.length / 2 - count; i++) {
-        if (i + 1 + count < points.length && (i + 1) % count !== 0) {
-            polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count]));
-        } else if (i + count < points.length && (i + 1) % count === 0) {
-            polygons.push(new Polygon([i, i + 1 - count, i + 1, i + count]))
+        if ((i % 2) === 0 ) {
+            if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color1));
+            } else if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color1))
+            }
+        } else {
+            if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color2));
+            } else if (i + 1 + count < points.length && (i + 1) % count !== 0) {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color2))
+            }
         }
     }
-
-    for (let i = points.length / 2 + count / 2; i < points.length; i++) {
-        if (i + 1 + count < points.length && (i + 1) % count !== 0) {
-            polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count]));
-        } else if (i + count < points.length && (i + 1) % count === 0) {
-            polygons.push(new Polygon([i, i + 1 - count, i + 1, i + count]))
+    for (let i = points.length / 2; i < points.length; i++) {
+        if ((i % 2) === 0 ) {
+            if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color1));
+            } else if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color1))
+            }
+        } else {
+            if (i + 1 + count < points.length && (i + 1) % count !== 0)  {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color2));
+            } else if (i + 1 + count < points.length && (i + 1) % count !== 0) {
+                polygons.push(new Polygon([i, i + 1, i + 1 + count, i + count], color2))
+            }
         }
     }
 
