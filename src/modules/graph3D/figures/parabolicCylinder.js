@@ -36,7 +36,7 @@ function parabolicCylinder(count = 10) {
     let color2 = '#00ffff';   
     let k = 0;  
     for (let i = 0; i < points.length / 2 - count; i++) {
-        if ((i % count) == 0) {
+        if ((i % count) === 0) {
             k++;
         }
         if (((i + k ) % 2) < 1) {
@@ -54,7 +54,7 @@ function parabolicCylinder(count = 10) {
         }
     }
     for (let i = points.length / 2; i < points.length; i++) {
-        if ((i % count) == 0) {
+        if ((i % count) === 0) {
             k++;
         }
         if (((i + k ) % 2) < 1) {
